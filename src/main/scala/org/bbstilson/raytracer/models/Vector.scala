@@ -2,16 +2,7 @@ package org.bbstilson.raytracer.models
 
 import Math.{ pow, sqrt }
 
-sealed trait Tuple
-
-case class Point(x: Double, y: Double, z: Double) extends Tuple {
-  def +(v: Vector): Point = Point(x + v.x, y + v.y, z + v.z)
-  def -(p: Point): Vector = Vector(x - p.x, y - p.y, z - p.z)
-  def -(v: Vector): Point = Point(x - v.x, y - v.y, z - v.z)
-  def unary_- = Point(-x, -y, -z)
-}
-
-case class Vector(x: Double, y: Double, z: Double) extends Tuple {
+case class Vector(x: Double, y: Double, z: Double) {
   def +(v: Vector): Vector = Vector(x + v.x, y + v.y, z + v.z)
   def -(v: Vector): Vector = Vector(x - v.x, y - v.y, z - v.z)
   def *(s: Double): Vector = Vector(x * s, y * s, z * s)
