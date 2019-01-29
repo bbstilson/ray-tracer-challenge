@@ -12,10 +12,10 @@ case class Color(r: Double, g: Double, b: Double) {
   def *(c: Color): Color = Color(r * c.r, g * c.g, b * c.b)
 
   override def toString: String = {
-    val rV = if (r > 1) 255 else if (r < 0) 0 else r * 255
-    val gV = if (g > 1) 255 else if (g < 0) 0 else g * 255
-    val bV = if (b > 1) 255 else if (b < 0) 0 else b * 255
-    s"${ceil(rV).toInt} ${ceil(gV).toInt} ${ceil(bV).toInt}"
+    val rV = Color.stringifyValue(r)
+    val gV = Color.stringifyValue(g)
+    val bV = Color.stringifyValue(b)
+    s"$rV $gV $bV"
   }
 
   override def equals(other: Any) = other match {
@@ -26,4 +26,8 @@ case class Color(r: Double, g: Double, b: Double) {
 
 object Color {
   val empty = Color(0,0,0)
+
+  private def stringifyValue(v: Double): Int = {
+    ceil(if (v > 1) 255 else if (v < 0) 0 else v * 255).toInt
+  }
 }

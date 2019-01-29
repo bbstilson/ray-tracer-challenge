@@ -35,7 +35,7 @@ class CanvasSpec extends UnitSpec {
     c.writePixel(2,1,c2)
     c.writePixel(4,2,c3)
     val ppm = c.toPPM
-    ppm.drop(3) should be(Seq(
+    ppm.drop(3).take(3) should be(Seq(
       "255 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
       "0 0 0 0 0 0 0 128 0 0 0 0 0 0 0",
       "0 0 0 0 0 0 0 0 0 0 0 0 0 0 255"
@@ -51,7 +51,7 @@ class CanvasSpec extends UnitSpec {
       }})
     })
     val ppm = c.toPPM
-    ppm.drop(3) should be(Seq(
+    ppm.drop(3).take(4) should be(Seq(
       "255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204",
       "153 255 204 153 255 204 153 255 204 153 255 204 153",
       "255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204",
@@ -62,6 +62,6 @@ class CanvasSpec extends UnitSpec {
   it should "end with a newline" in {
     val c = new Canvas(5, 3)
     val ppm = c.toPPM
-    ppm.last.last should be("\n")
+    ppm.last should be("\n")
   }
 }
