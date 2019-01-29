@@ -3,7 +3,7 @@ package org.bbstilson.raytracer.models
 import org.bbstilson.raytracer.UnitSpec
 
 class VectorSpec extends UnitSpec {
-  behavior of "Vector"
+  behavior of "Vectors"
 
   it should "have accessible properties" in {
     val v = Vector(6.7,-9.0,-100)

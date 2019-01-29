@@ -1,5 +1,7 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.utils.MathUtils._
+
 import Math.{ pow, sqrt }
 
 case class Vector(x: Double, y: Double, z: Double) {
@@ -21,5 +23,10 @@ case class Vector(x: Double, y: Double, z: Double) {
     val m = this.magnitude
     require(m > 0)
     Vector(x / m, y / m, z / m)
+  }
+
+  override def equals(other: Any) = other match {
+    case c: Vector => (x ~= c.x) && (y ~= c.y) && (z ~= c.z)
+    case _ => false
   }
 }
