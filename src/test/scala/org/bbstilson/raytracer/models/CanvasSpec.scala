@@ -10,7 +10,6 @@ class CanvasSpec extends UnitSpec {
     c.width should be(10)
     c.height should be(20)
     all(c.pixels.values) should be(Color.empty)
-    // c.pixels.foreach { row => all(row) should be(Color.empty) }
   }
 
   it should "write pixels" in {
