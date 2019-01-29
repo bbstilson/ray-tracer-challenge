@@ -7,9 +7,9 @@ import Math.{ ceil }
 case class Color(r: Double, g: Double, b: Double) {
   def +(v: Color): Color = Color(r + v.r, g + v.g, b + v.b)
   def -(v: Color): Color = Color(r - v.r, g - v.g, b - v.b)
+  def *(c: Color): Color = Color(r * c.r, g * c.g, b * c.b)
   def *(s: Double): Color = Color(r * s, g * s, b * s)
   def /(s: Double): Color = Color(r / s, g / s, b / s)
-  def *(c: Color): Color = Color(r * c.r, g * c.g, b * c.b)
 
   override def toString: String = {
     val rV = Color.stringifyValue(r)

@@ -1,14 +1,6 @@
 package org.bbstilson.raytracer.models
 
-case class FoldState(
-  output: Seq[String],
-  nextLine: String,
-  carryOver: Option[String]
-)
-
-object FoldState {
-  val empty = FoldState(Seq.empty[String], "", None)
-}
+import java.io.{ File, PrintWriter }
 
 class Canvas(val width: Int, val height: Int) {
 
@@ -28,7 +20,7 @@ class Canvas(val width: Int, val height: Int) {
     val pos = (x, y)
     pixelAt(pos) match {
       case Some(_) => pixels = pixels + (pos -> c)
-      case None => throw new Exception("Tried to add a color that is not in the canvas.")
+      case None => // do nothing
     }
   }
 
@@ -50,6 +42,19 @@ class Canvas(val width: Int, val height: Int) {
     header ++ body :+ "\n"
   }
 
+  def save: Unit = {
+    val homeDir = System.getProperty("user.home")
+    val outputFile = new File(s"${homeDir}/Desktop/${Canvas.getFileName}")
+    val writer = new PrintWriter(outputFile)
+
+    toPPM.foreach { line =>
+      writer.write(line)
+      writer.write("\n")
+    }
+
+    writer.close()
+  }
+
   private def chopLine(line: String): Seq[String] = {
     if (line.length > Canvas.MAX_PPM_LINE_LENGTH) {
       val (head, rest) = line.splitAt(
@@ -64,4 +69,6 @@ class Canvas(val width: Int, val height: Int) {
 
 object Canvas {
   val MAX_PPM_LINE_LENGTH = 70
+
+  def getFileName: String = s"canvas_${System.currentTimeMillis}.ppm"
 }
