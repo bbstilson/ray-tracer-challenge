@@ -2,6 +2,15 @@
 
 This repo holds the code for a ray tracer following this book: [The Ray Tracer Challenge - A Test-Driven Guide to Your First 3D Renderer](https://pragprog.com/book/jbtracer/the-ray-tracer-challenge)
 
+## Getting started
+
+This project uses [Scala](https://scala-lang.org/) version 2.12.8 and [SBT](https://www.scala-sbt.org/) version 1.2.8. If you're on OSX, both can be installed via [Homebrew](https://brew.sh/).
+
+Once everything is installed, you should be able to run the following:
+
+```
+> sbt update
+```
 
 ## Running the Main files
 
