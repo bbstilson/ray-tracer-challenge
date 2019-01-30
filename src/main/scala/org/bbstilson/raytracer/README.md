@@ -2,10 +2,10 @@
 
 This section contains the result of each chapter:
 
-- [Chapter 1](#chapter1)
-- [Chapter 2](#chapter2)
+- [Chapter 1](#chapter-1)
+- [Chapter 2](#chapter-2)
 
-## Chapter 1 (#chapter1)
+## Chapter 1
 
 Just text output for this one:
 
@@ -31,6 +31,6 @@ Projectile(Point(10.11370849898476,0.3137084989847604,0.0),Vector(0.547106781186
 Projectile(Point(10.660815280171308,-0.579184719828692,0.0),Vector(0.5371067811865473,-0.9928932188134524,0.0))
 ```
 
-## Chapter 2 (#chapter2)
+## Chapter 2
 
 ![A visual projectile falling.](./../../../../../../img/chapter2.jpg)
