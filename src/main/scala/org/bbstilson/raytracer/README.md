@@ -33,4 +33,4 @@ Projectile(Point(10.660815280171308,-0.579184719828692,0.0),Vector(0.53710678118
 
 ## Chapter 2
 
-[A visual projectile falling.](./../../../../../../img/chapter2.jpg)
+![A visual projectile falling.](./../../../../../../img/chapter2.jpg)
