@@ -1,15 +1,15 @@
 package org.bbstilson.raytracer
 
-import org.bbstilson.raytracer.models.{ Canvas, Color, Point, Vector }
+import org.bbstilson.raytracer.models.{ Canvas, Color, Point, SceneVector }
 
 object Chapter2 {
   def main(args: Array[String]): Unit = {
     val start = Point(0,1,0)
-    val velocity = Vector(1,1.8,0).normalize * 11.25
+    val velocity = SceneVector(1,1.8,0).normalize * 11.25
     var p = Projectile(start, velocity)
 
-    val gravity = Vector(0,-0.1,0)
-    val wind = Vector(-0.01,0,0)
+    val gravity = SceneVector(0,-0.1,0)
+    val wind = SceneVector(-0.01,0,0)
     val e = Environment(gravity, wind)
 
     val c = new Canvas(900, 550)
