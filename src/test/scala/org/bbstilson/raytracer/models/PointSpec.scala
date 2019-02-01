@@ -12,21 +12,21 @@ class PointSpec extends UnitSpec {
     p.z should be(3.1)
   }
 
-  it should "add a vector" in {
+  it should "add a SceneVector" in {
     val p = Point(3,-2,5)
-    val v = Vector(-2,3,1)
+    val v = SceneVector(-2,3,1)
     p + v should be(Point(1,1,6))
   }
 
   it should "subtract a point" in {
     val p1 = Point(3,2,1)
     val p2 = Point(5,6,7)
-    p1 - p2 should be(Vector(-2,-4,-6))
+    p1 - p2 should be(SceneVector(-2,-4,-6))
   }
 
-  it should "subtract a vector" in {
+  it should "subtract a SceneVector" in {
     val p = Point(3,2,1)
-    val v = Vector(5,6,7)
+    val v = SceneVector(5,6,7)
     p - v should be(Point(-2,-4,-6))
   }
 
