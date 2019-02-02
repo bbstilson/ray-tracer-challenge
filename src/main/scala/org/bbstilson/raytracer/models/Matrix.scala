@@ -1,6 +1,8 @@
 package org.bbstilson.raytracer.models
 
-object VectorToMatrix {
+import org.bbstilson.raytracer.utils.MathUtils._
+
+object MatrixUtils {
   type Row = Vector[Double]
   type Matrix = Vector[Row]
 
@@ -24,7 +26,15 @@ object VectorToMatrix {
     def *(other: Row)(implicit d: DummyImplicit): Row =
       RichMatrix.mXr(this.m, other.r)
 
-    def determinant: Double = m(0)(0) * m(1)(1) - m(0)(1) * m(1)(0)
+    def determinant: Double = {
+      if (m.size == 2) {
+        m(0)(0) * m(1)(1) - m(0)(1) * m(1)(0)
+      } else {
+        (0 to m.size - 1)
+          .map(col => m(0)(col) * m.cofactor(0, col))
+          .reduceLeft(_ + _)
+      }
+    }
 
     def submatrix(row: Int, col: Int): Matrix = {
       RichMatrix
@@ -37,6 +47,33 @@ object VectorToMatrix {
     def cofactor(r: Int, c: Int): Double = {
       val minor = m.minor(r, c)
       if (r + c % 2 == 0) minor else -minor
+    }
+
+    def isInvertible: Boolean = m.determinant != 0
+
+    def inverse: Matrix = {
+      require(m.isInvertible)
+
+      val s = m.size - 1
+      val originalDeterminate = m.determinant
+
+      (0 to s).map { row =>
+        (0 to s).map { col =>
+          m.cofactor(row, col) / originalDeterminate
+        }.toVector
+      }.toVector.transpose
+    }
+
+    override def equals(other: Any): Boolean = other match {
+      case c: Matrix => {
+        val s = m.size - 1
+        (0 to s).forall { row =>
+          (0 to s).forall { col =>
+            this.m(row)(col) ~= c(row)(col)
+          }
+        }
+      }
+      case _ => false
     }
 
     override def toString: String = {

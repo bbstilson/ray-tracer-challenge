@@ -1,6 +1,6 @@
 package org.bbstilson.raytracer.models
 
-import VectorToMatrix._
+import MatrixUtils._
 
 import org.bbstilson.raytracer.UnitSpec
 
@@ -164,5 +164,54 @@ class MatrixSpec extends UnitSpec {
     m.cofactor(0, 2) should be(210)
     m.cofactor(0, 3) should be(51)
     m.determinant should be(-4071)
+  }
+
+  it should "check for invertibility" in {
+    val m1 = Vector(
+      Vector(6d,4d,4d,4d),
+      Vector(5d,5d,7d,6d),
+      Vector(4d,-9d,3d,-7d),
+      Vector(9d,1d,7d,-6d)
+    )
+
+    m1.determinant should be(-2120)
+    m1.isInvertible should be(true)
+
+    val m2 = Vector(
+      Vector(-4d,2d,-2d,-3d),
+      Vector(9d,6d,2d,6d),
+      Vector(0d,-5d,1d,-5d),
+      Vector(0d,0d,0d,0d)
+    )
+
+    m2.determinant should be(0)
+    m2.isInvertible should be(false)
+  }
+
+  it should "invert a matrix" in {
+    val m1 = Vector(
+      Vector(-5d,2d,6d,-8d),
+      Vector(1d,-5d,1d,8d),
+      Vector(7d,7d,-6d,-7d),
+      Vector(1d,-3d,7d,4d)
+    )
+
+    val m2: RichMatrix = m1.inverse
+
+    println(m2)
+    // m1.determinant should be(532)
+    // m1.cofactor(2, 3) should be(-160)
+    // m2(3)(2) should be(-160/532)
+    // m1.cofactor(3, 2) should be(105)
+    // m2(2)(3) should be(105/532)
+    
+    val expectedInverse = Vector(
+      Vector(0.21805,0.45113,0.24060,-0.04511),
+      Vector(-0.80827,-1.45677,-0.44361,0.52068),
+      Vector(-0.07895,-0.22368,-0.05263,0.19737),
+      Vector(-0.52256,-0.81391,-0.30075,0.30639)
+    )
+    
+    m2 should be(expectedInverse)
   }
 }
