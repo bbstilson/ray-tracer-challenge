@@ -46,7 +46,7 @@ object MatrixUtils {
 
     def cofactor(r: Int, c: Int): Double = {
       val minor = m.minor(r, c)
-      if (r + c % 2 == 0) minor else -minor
+      if ((r + c) % 2 == 0) minor else -minor
     }
 
     def isInvertible: Boolean = m.determinant != 0
@@ -64,16 +64,13 @@ object MatrixUtils {
       }.toVector.transpose
     }
 
-    override def equals(other: Any): Boolean = other match {
-      case c: Matrix => {
-        val s = m.size - 1
-        (0 to s).forall { row =>
-          (0 to s).forall { col =>
-            this.m(row)(col) ~= c(row)(col)
-          }
+    def ~=(other: Matrix): Boolean = {
+      val s = m.size - 1
+      (0 to s).forall { row =>
+        (0 to s).forall { col =>
+          m(row)(col) ~= other(row)(col)
         }
       }
-      case _ => false
     }
 
     override def toString: String = {

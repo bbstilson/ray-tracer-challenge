@@ -8,14 +8,14 @@ class MatrixSpec extends UnitSpec {
   behavior of "Matrix"
 
   it should "multiply by another matrix" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(1d,2d,3d,4d),
       Vector(5d,6d,7d,8d),
       Vector(9d,8d,7d,6d),
       Vector(5d,4d,3d,2d)
     )
 
-    val m2 = Vector(
+    val b = Vector(
       Vector(-2d,1d,2d,3d),
       Vector(3d,2d,1d,-1d),
       Vector(4d,3d,6d,5d),
@@ -29,11 +29,11 @@ class MatrixSpec extends UnitSpec {
       Vector(16d,26d,46d,42d)
     )
 
-    m1 * m2 should be(m3)
+    a * b should be(m3)
   }
 
   it should "multiply by a row" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(1d,2d,3d,4d),
       Vector(2d,4d,4d,2d),
       Vector(8d,6d,4d,1d),
@@ -42,7 +42,7 @@ class MatrixSpec extends UnitSpec {
     val r1 = Vector(1d,2d,3d,1d)
     val r2 = Vector(18d,24d,33d,1d)
 
-    m1 * r1 should be(r2)
+    a * r1 should be(r2)
   }
 
   it should "multiply by an identity matrix" in {
@@ -61,42 +61,42 @@ class MatrixSpec extends UnitSpec {
   }
 
   it should "transpose" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(0,9,3,0),
       Vector(9,8,0,8),
       Vector(1,8,5,3),
       Vector(0,0,5,8)
     )
-    val m2 = Vector(
+    val b = Vector(
       Vector(0,9,1,0),
       Vector(9,8,8,0),
       Vector(3,0,5,5),
       Vector(0,8,3,8)
     )
 
-    m1.transpose should be(m2)
+    a.transpose should be(b)
   }
 
   it should "calculate the determinant of a 2x2 matrix" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(1d,5d),
       Vector(-3d,2d)
     )
-    m1.determinant should be(17)
+    a.determinant should be(17)
   }
 
   it should "get a submatrix" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(1d,5d,0d),
       Vector(-3d,2d,7d),
       Vector(0d,6d,-3d)
     )
-    val m2 = Vector(
+    val b = Vector(
       Vector(-3d,2d),
       Vector(0d,6d)
     )
 
-    m1.submatrix(0, 2) should be(m2)
+    a.submatrix(0, 2) should be(b)
 
     val m3 = Vector(
       Vector(-6d,1d,1d,6d),
@@ -115,14 +115,14 @@ class MatrixSpec extends UnitSpec {
   }
 
   it should "calculate the minor of a 3x3 matrix" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(3d,5d,0d),
       Vector(2d,-1d,-7d),
       Vector(6d,-1d,5d)
     )
-    val m2 = m1.submatrix(1, 0)
+    val b = a.submatrix(1, 0)
 
-    m2.determinant should be(m1.minor(1, 0))
+    b.determinant should be(a.minor(1, 0))
   }
 
   it should "calculate a cofactor of a 3x3 matrix" in {
@@ -167,51 +167,103 @@ class MatrixSpec extends UnitSpec {
   }
 
   it should "check for invertibility" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(6d,4d,4d,4d),
       Vector(5d,5d,7d,6d),
       Vector(4d,-9d,3d,-7d),
       Vector(9d,1d,7d,-6d)
     )
 
-    m1.determinant should be(-2120)
-    m1.isInvertible should be(true)
+    a.determinant should be(-2120)
+    a.isInvertible should be(true)
 
-    val m2 = Vector(
+    val b = Vector(
       Vector(-4d,2d,-2d,-3d),
       Vector(9d,6d,2d,6d),
       Vector(0d,-5d,1d,-5d),
       Vector(0d,0d,0d,0d)
     )
 
-    m2.determinant should be(0)
-    m2.isInvertible should be(false)
+    b.determinant should be(0)
+    b.isInvertible should be(false)
   }
 
   it should "invert a matrix" in {
-    val m1 = Vector(
+    val a = Vector(
       Vector(-5d,2d,6d,-8d),
       Vector(1d,-5d,1d,8d),
       Vector(7d,7d,-6d,-7d),
       Vector(1d,-3d,7d,4d)
     )
 
-    val m2: RichMatrix = m1.inverse
+    val b = a.inverse
 
-    println(m2)
-    // m1.determinant should be(532)
-    // m1.cofactor(2, 3) should be(-160)
-    // m2(3)(2) should be(-160/532)
-    // m1.cofactor(3, 2) should be(105)
-    // m2(2)(3) should be(105/532)
-    
+    a.determinant should be(532)
+    a.cofactor(2, 3) should be(-160)
+    b(3)(2) should be(-160d/532)
+    a.cofactor(3, 2) should be(105)
+    b(2)(3) should be(105d/532)
+
     val expectedInverse = Vector(
       Vector(0.21805,0.45113,0.24060,-0.04511),
       Vector(-0.80827,-1.45677,-0.44361,0.52068),
       Vector(-0.07895,-0.22368,-0.05263,0.19737),
       Vector(-0.52256,-0.81391,-0.30075,0.30639)
     )
+
+    (b ~= expectedInverse) should be(true)
+  }
+
+  it should "calculate the inverse of another matrix" in {
+    val a = Vector(
+      Vector(8d,-5d,9d,2d),
+      Vector(7d,5d,6d,1d),
+      Vector(-6d,0d,9d,6d),
+      Vector(-3d,0d,-9d,-4d)
+    )
+
+    val expectedInverse = Vector(
+      Vector(-0.15385,-0.15385,-0.28205,-0.53846),
+      Vector(-0.07692,0.12308,0.02564,0.03077),
+      Vector(0.35897,0.35897,0.43590,0.92308),
+      Vector(-0.69231,-0.69231,-0.76923,-1.92308)
+    )
+
+    (a.inverse ~= expectedInverse) should be(true)
+
+    val b = Vector(
+      Vector(9d,3d,0d,9d),
+      Vector(-5d,-2d,-6d,-3d),
+      Vector(-4d,9d,6d,4d),
+      Vector(-7d,6d,6d,2d)
+    )
+
+    val expectedInverse2 = Vector(
+      Vector(-0.04074,-0.07778,0.14444,-0.22222),
+      Vector(-0.07778,0.03333,0.36667,-0.33333),
+      Vector(-0.02901,-0.14630,-0.10926,0.12963),
+      Vector(0.17778,0.06667,-0.26667,0.33333)
+    )
     
-    m2 should be(expectedInverse)
+    (b.inverse ~= expectedInverse2) should be(true)
+  }
+
+  it should "multiply and invert" in {
+    val a = Vector(
+      Vector(3d,-9d,7d,3d),
+      Vector(3d,-8d,2d,-9d),
+      Vector(-4d,4d,4d,1d),
+      Vector(-6d,5d,-1d,1d)
+    )
+    val b = Vector(
+      Vector(8d,2d,2d,2d),
+      Vector(3d,-1d,7d,0d),
+      Vector(7d,0d,5d,4d),
+      Vector(6d,-2d,0d,5d)
+    )
+
+    val c = a * b
+
+    ((c * b.inverse) ~= a) should be(true)
   }
 }
