@@ -1,6 +1,6 @@
 package org.bbstilson.raytracer
 
-import org.bbstilson.raytracer.models.{ Point, SceneVector }
+import org.bbstilson.raytracer.models._
 
 case class Projectile(position: Point, velocity: SceneVector)
 case class Environment(gravity: SceneVector, wind: SceneVector)
