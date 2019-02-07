@@ -4,17 +4,12 @@ import MatrixDouble._
 
 import Math.{ cos, sin }
 
-trait RotationMatrix {
-  val tMatrix: MatrixDouble
+class RotationX(m: Matrix) extends MatrixDouble(m)
+class RotationY(m: Matrix) extends MatrixDouble(m)
+class RotationZ(m: Matrix) extends MatrixDouble(m)
 
-  def *(p: Point): Point = tMatrix * p
-  def *(sv: SceneVector): SceneVector = tMatrix * sv
-
-  def inverse: MatrixDouble = tMatrix.inverse
-}
-
-case class RotationX(r: Double) extends RotationMatrix {
-  val tMatrix = {
+object RotationX {
+  def apply(r: Double): RotationX = {
     val vals = Map(
       (0,0) -> 1d,
       (1,1) -> cos(r),
@@ -23,12 +18,13 @@ case class RotationX(r: Double) extends RotationMatrix {
       (2,2) -> cos(r),
       (3,3) -> 1d
     )
-    mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    val m = mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    new RotationX(m)
   }
 }
 
-case class RotationY(r: Double) extends RotationMatrix {
-  val tMatrix = {
+object RotationY {
+  def apply(r: Double): RotationY = {
     val vals = Map(
       (0,0) -> cos(r),
       (0,2) -> sin(r),
@@ -37,12 +33,13 @@ case class RotationY(r: Double) extends RotationMatrix {
       (2,2) -> cos(r),
       (3,3) -> 1d,
     )
-    mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    val m = mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    new RotationY(m)
   }
 }
 
-case class RotationZ(r: Double) extends RotationMatrix {
-  val tMatrix = {
+object RotationZ {
+  def apply(r: Double): RotationZ = {
     val vals = Map(
       (0,0) -> cos(r),
       (0,1) -> -sin(r),
@@ -51,6 +48,7 @@ case class RotationZ(r: Double) extends RotationMatrix {
       (2,2) -> 1d,
       (3,3) -> 1d
     )
-    mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    val m = mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    new RotationZ(m)
   }
 }

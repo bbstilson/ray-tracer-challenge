@@ -2,8 +2,10 @@ package org.bbstilson.raytracer.models
 
 import MatrixDouble._
 
-case class ShearMatrix(xy: Int, xz: Int, yx: Int, yz: Int, zx: Int, zy: Int) {
-  private val tMatrix = {
+class ShearMatrix(m: Matrix) extends MatrixDouble(m)
+
+object ShearMatrix {
+  def apply(xy: Int, xz: Int, yx: Int, yz: Int, zx: Int, zy: Int): ShearMatrix = {
     val vals = Map(
       (0,0) -> 1d,
       (1,1) -> 1d,
@@ -16,8 +18,7 @@ case class ShearMatrix(xy: Int, xz: Int, yx: Int, yz: Int, zx: Int, zy: Int) {
       (2,0) -> zx.toDouble,
       (2,1) -> zy.toDouble
     )
-    mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    val m = mkMatrix(4, 4, (r, c) => vals.getOrElse((r, c), 0d))
+    new ShearMatrix(m)
   }
-
-  def *(p: Point): Point = tMatrix * p
 }

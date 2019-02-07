@@ -39,11 +39,11 @@ class MatrixDouble(vec: Matrix) {
   }
 
   def +(other: MatrixDouble): MatrixDouble = {
-    mkMatrix(rows, cols, (r, c) => this(r,c) + other(r,c))
+    new MatrixDouble(mkMatrix(rows, cols, (r, c) => this(r,c) + other(r,c)))
   }
 
   def -(other: MatrixDouble): MatrixDouble = {
-    mkMatrix(rows, cols, (r, c) => this(r,c) - other(r, c))
+    new MatrixDouble(mkMatrix(rows, cols, (r, c) => this(r,c) - other(r, c)))
   }
 
   def transpose: MatrixDouble = new MatrixDouble(vec.transpose)
@@ -107,16 +107,15 @@ object MatrixDouble {
   type Row = Vector[Double]
   type Matrix = Vector[Row]
 
-  def mkMatrix(rs: Int, cs: Int, f: (Int, Int) => Double): MatrixDouble = {
-    new MatrixDouble(
-      for (r <- (0 until rs).toVector) yield
-        for (c <- (0 until cs).toVector) yield
-          f(r, c)
-    )
+  def mkMatrix(rs: Int, cs: Int, f: (Int, Int) => Double): Matrix = {
+    for (r <- (0 until rs).toVector) yield
+      for (c <- (0 until cs).toVector) yield
+        f(r, c)
   }
 
-  def identity(size: Int): MatrixDouble =
-    mkMatrix(size, size, (r, c) => if (r == c) 1d else 0d)
+  def identity(size: Int): MatrixDouble = {
+    new MatrixDouble(mkMatrix(size, size, (r, c) => if (r == c) 1d else 0d))
+  }
 
   private def dotProduct(a: Row, b: Row): Double = {
     a
