@@ -28,6 +28,16 @@ class MatrixDouble(vec: Matrix) {
     for (row <- vec) yield dotProduct(row, r)
   }
 
+  def *(p: Point): Point = {
+    val Vector(x, y, z, _) = this * Vector(p.x, p.y, p.z, 1)
+    Point(x, y, z)
+  }
+
+  def *(sv: SceneVector): SceneVector = {
+    val Vector(x, y, z, _) = this * Vector(sv.x, sv.y, sv.z, 1)
+    SceneVector(x, y, z)
+  }
+
   def +(other: MatrixDouble): MatrixDouble = {
     mkMatrix(rows, cols, (r, c) => this(r,c) + other(r,c))
   }
@@ -62,7 +72,7 @@ class MatrixDouble(vec: Matrix) {
   def isInvertible: Boolean = determinant != 0
 
   def inverse: MatrixDouble = {
-    require(isInvertible)
+    require(isInvertible, s"Matrix is not invertible.\n $vec")
 
     // Cache determinant.
     val originalDeterminate = determinant
@@ -108,15 +118,14 @@ object MatrixDouble {
   def identity(size: Int): MatrixDouble =
     mkMatrix(size, size, (r, c) => if (r == c) 1d else 0d)
 
-  //private
-  def dotProduct(a: Row, b: Row): Double = {
+  private def dotProduct(a: Row, b: Row): Double = {
     a
       .zip(b)
       .map({ case (n, m) => n * m })
       .reduceLeft(_ + _)
   }
-  //private
-  def drop1[A](xs: Vector[A], i: Int): Vector[A] = {
+
+  private def drop1[A](xs: Vector[A], i: Int): Vector[A] = {
     val size = xs.size
     (i, size) match {
       case (0, _) => xs.tail
