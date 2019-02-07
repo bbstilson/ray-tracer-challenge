@@ -3,6 +3,7 @@ package org.bbstilson.raytracer.models
 import MatrixDouble._
 
 case class TranslationMatrix(m: Matrix) extends MatrixDouble(m) {
+  // TranslationMatrix does nothing to SceneVector.
   override def *(sv: SceneVector): SceneVector = sv
 }
 
