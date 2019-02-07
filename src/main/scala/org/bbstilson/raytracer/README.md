@@ -4,6 +4,8 @@ This section contains the result of each chapter:
 
 - [Chapter 1](#chapter-1)
 - [Chapter 2](#chapter-2)
+- Chapter 3
+- [Chapter 4](#chapter-4)
 
 ## Chapter 1
 
@@ -34,3 +36,7 @@ Projectile(Point(10.660815280171308,-0.579184719828692,0.0),SceneVector(0.537106
 ## Chapter 2
 
 ![A visual projectile falling.](./../../../../../../img/chapter2.jpg)
+
+## Chapter 4
+
+![A clock.](./../../../../../../img/chapter4.jpg)

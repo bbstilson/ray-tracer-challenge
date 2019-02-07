@@ -1,6 +1,6 @@
 package org.bbstilson.raytracer
 
-import org.bbstilson.raytracer.models.{ Canvas, Color, Point, SceneVector }
+import org.bbstilson.raytracer.models._
 
 object Chapter2 {
   def main(args: Array[String]): Unit = {
