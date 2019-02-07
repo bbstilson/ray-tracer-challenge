@@ -2,7 +2,9 @@ package org.bbstilson.raytracer.models
 
 import MatrixDouble._
 
-case class TranslationMatrix(m: Matrix) extends MatrixDouble(m)
+case class TranslationMatrix(m: Matrix) extends MatrixDouble(m) {
+  override def *(sv: SceneVector): SceneVector = sv
+}
 
 object TranslationMatrix {
   def apply(x: Int, y: Int, z: Int): TranslationMatrix = {
