@@ -1,6 +1,7 @@
 package org.bbstilson.raytracer.models
 
 import MatrixDouble._
+import org.bbstilson.raytracer.utils.MatrixUtils._
 
 import Math.{ cos, sin }
 
