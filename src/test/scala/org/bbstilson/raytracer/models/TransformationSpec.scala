@@ -10,8 +10,8 @@ class TransformationSpec extends UnitSpec {
   "Individual transformations" should "applied in sequence" in {
     val p = Point(1, 0, 1)
     val a = RotationX(PI / 2)
-    val b = ScaleMatrix(5, 5, 5)
-    val c = TranslationMatrix(10, 5, 7)
+    val b = Scale(5, 5, 5)
+    val c = Translation(10, 5, 7)
 
     // apply rotation first
     val p2 = a * p
@@ -29,8 +29,8 @@ class TransformationSpec extends UnitSpec {
   "Chained transformations" should "be applied in reverse order" in {
     val p = Point(1, 0, 1)
     val a = RotationX(PI / 2)
-    val b = ScaleMatrix(5, 5, 5)
-    val c = TranslationMatrix(10, 5, 7)
+    val b = Scale(5, 5, 5)
+    val c = Translation(10, 5, 7)
     val t = c * b * a
 
     t * p should be(Point(15, 0, 7))
