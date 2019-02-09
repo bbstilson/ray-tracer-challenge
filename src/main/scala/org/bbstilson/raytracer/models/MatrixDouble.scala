@@ -1,7 +1,8 @@
 package org.bbstilson.raytracer.models
 
-import org.bbstilson.raytracer.utils.MathUtils._
-
+import org.bbstilson.raytracer.utils.{ MatrixUtils, MathUtils }
+import MathUtils._
+import MatrixUtils._
 import MatrixDouble._
 
 class MatrixDouble(vec: Matrix) {
@@ -39,11 +40,11 @@ class MatrixDouble(vec: Matrix) {
   }
 
   def +(other: MatrixDouble): MatrixDouble = {
-    new MatrixDouble(mkMatrix(rows, cols, (r, c) => this(r,c) + other(r,c)))
+    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r,c) + other(r,c)))
   }
 
   def -(other: MatrixDouble): MatrixDouble = {
-    new MatrixDouble(mkMatrix(rows, cols, (r, c) => this(r,c) - other(r, c)))
+    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r,c) - other(r, c)))
   }
 
   def transpose: MatrixDouble = new MatrixDouble(vec.transpose)
@@ -104,19 +105,6 @@ class MatrixDouble(vec: Matrix) {
 }
 
 object MatrixDouble {
-  type Row = Vector[Double]
-  type Matrix = Vector[Row]
-
-  def mkMatrix(rs: Int, cs: Int, f: (Int, Int) => Double): Matrix = {
-    for (r <- (0 until rs).toVector) yield
-      for (c <- (0 until cs).toVector) yield
-        f(r, c)
-  }
-
-  def identity(size: Int): MatrixDouble = {
-    new MatrixDouble(mkMatrix(size, size, (r, c) => if (r == c) 1d else 0d))
-  }
-
   private def dotProduct(a: Row, b: Row): Double = {
     a
       .zip(b)

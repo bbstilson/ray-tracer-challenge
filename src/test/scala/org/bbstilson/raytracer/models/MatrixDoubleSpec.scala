@@ -1,6 +1,7 @@
 package org.bbstilson.raytracer.models
 
 import org.bbstilson.raytracer.UnitSpec
+import org.bbstilson.raytracer.utils.MatrixUtils
 
 class MatrixDoubleSpec extends UnitSpec {
   behavior of "MatrixDouble"
@@ -60,12 +61,14 @@ class MatrixDoubleSpec extends UnitSpec {
         Vector(4d,8d,16d,32d)
       )
     )
-    a * MatrixDouble.identity(4) should be(a)
+    val identity = new MatrixDouble(MatrixUtils.identity)
+    a * identity should be(a)
   }
 
   it should "multiply an identity matrix with a row" in {
     val r = Vector(1d,2d,3d,4d)
-    MatrixDouble.identity(4) * r should be(r)
+    val identity = new MatrixDouble(MatrixUtils.identity)
+    identity * r should be(r)
   }
 
   it should "transpose" in {

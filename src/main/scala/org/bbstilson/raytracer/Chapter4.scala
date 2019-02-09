@@ -11,7 +11,6 @@ object Chapter4 {
     val center = width / 2
 
     val canvas = new Canvas(width, height)
-    val white = Color(1,1,1)
     val midnight = Point(0,0,1)
 
     (1 to 12).foreach { hour =>

@@ -6,6 +6,7 @@ This section contains the result of each chapter:
 - [Chapter 2](#chapter-2)
 - Chapter 3
 - [Chapter 4](#chapter-4)
+- [Chapter 5](#chapter-5)
 
 ## Chapter 1
 
@@ -40,3 +41,25 @@ Projectile(Point(10.660815280171308,-0.579184719828692,0.0),SceneVector(0.537106
 ## Chapter 4
 
 ![A clock.](./../../../../../../img/chapter4.jpg)
+
+## Chapter 5
+
+### Normal sphere.
+
+![Red sphere](./../../../../../../img/chapter5.jpg)
+
+### Sphere: Y Axis shrink.
+
+![Red sphere, y axis shrink](./../../../../../../img/chapter5_y_shrink.jpg)
+
+### Sphere: X Axis shrink.
+
+![Red sphere, x axis shrink](./../../../../../../img/chapter5_x_shrink.jpg)
+
+### Sphere: axis shrink and rotation.
+
+![Red sphere, shrink and rotate](./../../../../../../img/chapter5_shrink_rotate.jpg)
+
+### Sphere: shrink, rotation, and skew.
+
+![Red sphere, shrink, rotate, and skew](./../../../../../../img/chapter5_shrink_rotate_skew.jpg)
