@@ -12,7 +12,7 @@ class IntersectionSpec extends UnitSpec {
     i.o should be(s)
   }
 
-  it should "The hit, when all intersections have positive t" in {
+  it should "hit when all intersections have positive t" in {
     val s = Sphere()
     val i1 = Intersection(1, s)
     val i2 = Intersection(2, s)
@@ -21,7 +21,7 @@ class IntersectionSpec extends UnitSpec {
     i should be(Some(i1))
   }
 
-  it should "The hit, when some intersections have negative t" in {
+  it should "hit when some intersections have negative t" in {
     val s = Sphere()
     val i1 = Intersection(-1, s)
     val i2 = Intersection(1, s)
@@ -30,7 +30,7 @@ class IntersectionSpec extends UnitSpec {
     i should be(Some(i2))
   }
 
-  it should "The hit, when all intersections have negative t" in {
+  it should "not hit when all intersections have negative t" in {
     val s = Sphere()
     val i1 = Intersection(-2, s)
     val i2 = Intersection(-1, s)
@@ -39,7 +39,7 @@ class IntersectionSpec extends UnitSpec {
     i should be(None)
   }
 
-  it should "The hit is always the lowest non-negative intersection" in {
+  it should "hit is always the lowest non-negative intersection" in {
     val s = Sphere()
     val i1 = Intersection(5, s)
     val i2 = Intersection(7, s)
