@@ -44,17 +44,22 @@ Projectile(Point(10.660815280171308,-0.579184719828692,0.0),SceneVector(0.537106
 
 ## Chapter 5
 
-Normal sphere.
+### Normal sphere.
+
 ![Red sphere](./../../../../../../img/chapter5.jpg)
 
-Sphere: Y Axis shrink.
+### Sphere: Y Axis shrink.
+
 ![Red sphere, y axis shrink](./../../../../../../img/chapter5_y_shrink.jpg)
 
-Sphere: X Axis shrink.
+### Sphere: X Axis shrink.
+
 ![Red sphere, x axis shrink](./../../../../../../img/chapter5_x_shrink.jpg)
 
-Sphere: axis shrink and rotation.
+### Sphere: axis shrink and rotation.
+
 ![Red sphere, shrink and rotate](./../../../../../../img/chapter5_shrink_rotate.jpg)
 
-Sphere: shrink, rotation, and skew.
+### Sphere: shrink, rotation, and skew.
+
 ![Red sphere, shrink, rotate, and skew](./../../../../../../img/chapter5_shrink_rotate_skew.jpg)
