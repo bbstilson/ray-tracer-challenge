@@ -49,3 +49,7 @@ Where a test looks like:
 > sbt
 > test:testOnly *SomeSpec -- -z "do a thing"
 ```
+
+## Putting it together
+
+The end of a chapter typically came with some visual output. They can be viewed [here](./src/main/scala/org/bbstilson/raytracer/README.md).
