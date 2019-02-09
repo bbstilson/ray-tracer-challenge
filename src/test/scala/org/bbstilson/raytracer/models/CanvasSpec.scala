@@ -9,7 +9,7 @@ class CanvasSpec extends UnitSpec {
     val c = new Canvas(10, 20)
     c.width should be(10)
     c.height should be(20)
-    all(c.pixels.values) should be(Color.empty)
+    all(c.pixels.values) should be(Color.BLACK)
   }
 
   it should "write pixels" in {
