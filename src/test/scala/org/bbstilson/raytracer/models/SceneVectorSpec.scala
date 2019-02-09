@@ -2,6 +2,8 @@ package org.bbstilson.raytracer.models
 
 import org.bbstilson.raytracer.UnitSpec
 
+import Math.{ sqrt }
+
 class SceneVectorSpec extends UnitSpec {
   behavior of "SceneVectors"
 
@@ -62,5 +64,19 @@ class SceneVectorSpec extends UnitSpec {
     val v2 = SceneVector(2,3,4)
     v1 cross v2 should be(SceneVector(-1,2,-1))
     v2 cross v1 should be(SceneVector(1,-2,1))
+  }
+
+  it should "reflect approaching at 45°" in {
+    val v = SceneVector(1, -1, 0)
+    val n = SceneVector(0, 1, 0)
+    val r = SceneVector.reflect(v, n)
+    r should be(SceneVector(1, 1, 0))
+  }
+
+  it should "reflect off a slanted surface" in {
+    val v = SceneVector(0, -1, 0)
+    val n = SceneVector(sqrt(2)/2, sqrt(2)/2, 0)
+    val r = SceneVector.reflect(v, n)
+    r should be(SceneVector(1, 0, 0))
   }
 }
