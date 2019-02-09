@@ -20,6 +20,6 @@ object Material {
     require(diffuse >= 0, "Material:diffuse cannot be a negative values.")
     require(specular >= 0, "Material:specular cannot be a negative values.")
     require(shininess >= 0, "Material:shininess cannot be a negative values.")
-    Material(color, ambient, diffuse, specular, shininess)
+    new Material(color, ambient, diffuse, specular, shininess)
   }
 }
