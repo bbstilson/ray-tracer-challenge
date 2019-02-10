@@ -1,6 +1,7 @@
 package org.bbstilson.raytracer.models
 
 import org.bbstilson.raytracer.UnitSpec
+import org.bbstilson.raytracer.models.matrix._
 
 class RaySpec extends UnitSpec {
   behavior of "Ray"

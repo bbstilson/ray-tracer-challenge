@@ -1,5 +1,6 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.models.matrix._
 import org.bbstilson.raytracer.UnitSpec
 
 import Math.{ PI, sqrt }
@@ -113,7 +114,7 @@ class SphereSpec extends UnitSpec {
 
   it should "be created with a material" in {
     val m = Material(ambient = 1d)
-    val s = Sphere(material = m)
+    val s = Sphere(mat = m)
     s.material should be(m)
   }
 }

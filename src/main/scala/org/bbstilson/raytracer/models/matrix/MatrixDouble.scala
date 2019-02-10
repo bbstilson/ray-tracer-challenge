@@ -1,6 +1,7 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.models.matrix
 
 import org.bbstilson.raytracer.utils.{ MatrixUtils, MathUtils }
+import org.bbstilson.raytracer.models._
 import MathUtils._
 import MatrixUtils._
 import MatrixDouble._

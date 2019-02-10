@@ -1,5 +1,6 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.models.matrix.MatrixDouble
 import org.bbstilson.raytracer.utils.MatrixUtils.{ Matrix, identity }
 
 import Math.{ pow, sqrt }

@@ -1,4 +1,4 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.models.matrix
 
 import MatrixDouble._
 import org.bbstilson.raytracer.utils.MatrixUtils._

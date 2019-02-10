@@ -1,6 +1,7 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.models.matrix
 
 import org.bbstilson.raytracer.utils.MatrixUtils._
+import org.bbstilson.raytracer.models.SceneVector
 import MatrixDouble._
 
 case class Translation(m: Matrix) extends MatrixDouble(m) {

@@ -1,6 +1,7 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.models.matrix
 
 import org.bbstilson.raytracer.UnitSpec
+import org.bbstilson.raytracer.models._
 
 import Math.{ PI, sqrt }
 
