@@ -28,7 +28,7 @@ case class Material(
     // vector and the normal vector. A negative number means the light is on the
     // other side of the surface.
 
-    val (diffuseComputed: Color, specularComputed: Color) = lightv.dot(normal) match {
+    val (diffuseComputed, specularComputed) = lightv.dot(normal) match {
       case lDN if lDN < 0 => (Color.BLACK, Color.BLACK)
       case lightDotNormal => {
         // Compute the diffuse contribution.
@@ -46,6 +46,8 @@ case class Material(
             light.intensity * specular * factor
           }
         }
+
+        (diffuseComputed, specularComputed)
       }
     }
 

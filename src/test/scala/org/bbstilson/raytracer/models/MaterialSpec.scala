@@ -26,7 +26,7 @@ class MaterialSpec extends UnitSpec {
     result should be(Color(1.0, 1.0, 1.0))
   }
 
-  it should "light with eye opposite surface, light offset 45°" {
+  it should "light with eye opposite surface, light offset 45°" in {
     val eye = SceneVector(0, 0, -1)
     val normal = SceneVector(0, 0, -1)
     val light = PointLight(Point(0, 10, -10), Color(1, 1, 1))
