@@ -7,6 +7,7 @@ This section contains the result of each chapter:
 - Chapter 3
 - [Chapter 4](#chapter-4)
 - [Chapter 5](#chapter-5)
+- [Chapter 6](#chapter-6)
 
 ## Chapter 1
 
@@ -63,7 +64,6 @@ Projectile(Point(10.660815280171308,-0.579184719828692,0.0),SceneVector(0.537106
 ### Sphere: shrink, rotation, and skew.
 
 ![Red sphere, shrink, rotate, and skew](./../../../../../../img/chapter5_shrink_rotate_skew.jpg)
-
 
 ## Chapter 6
 
