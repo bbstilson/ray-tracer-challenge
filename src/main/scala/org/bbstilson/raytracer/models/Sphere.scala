@@ -6,8 +6,10 @@ import Math.{ pow, sqrt }
 
 case class Sphere(
   transform: MatrixDouble = new MatrixDouble(identity),
-  material: Material = Material()
+  mat: Material = Material()
 ) extends Interactable {
+  val material = mat
+
   def intersect(r: Ray): Seq[Intersection] = {
     val ray = r.transform(transform.inverse)
     // The vector from the sphere's center, to the ray origin.
