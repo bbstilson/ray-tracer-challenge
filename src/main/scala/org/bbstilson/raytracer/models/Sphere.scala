@@ -5,8 +5,11 @@ import org.bbstilson.raytracer.utils.MatrixUtils.{ Matrix, identity }
 import Math.{ pow, sqrt }
 
 case class Sphere(
-  transform: MatrixDouble = new MatrixDouble(identity)
+  transform: MatrixDouble = new MatrixDouble(identity),
+  mat: Material = Material()
 ) extends Interactable {
+  val material = mat
+
   def intersect(r: Ray): Seq[Intersection] = {
     val ray = r.transform(transform.inverse)
     // The vector from the sphere's center, to the ray origin.
@@ -28,5 +31,13 @@ case class Sphere(
         )
       }
     }
+  }
+
+  def normalAt(p: Point): SceneVector = {
+    val objectPoint = transform.inverse * p
+    val objectNormal = objectPoint - Point(0, 0, 0)
+    val worldNormal = transform.inverse.transpose * objectNormal
+    // worldNormal.w ← 0
+    worldNormal.normalize
   }
 }

@@ -12,7 +12,7 @@ class Canvas(val width: Int, val height: Int) {
     } yield (w, h)
 
     ps
-      .map(t => (t, Color.empty))
+      .map(t => (t, Color.BLACK))
       .toMap
   }
 

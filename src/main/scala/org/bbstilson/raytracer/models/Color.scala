@@ -25,7 +25,7 @@ case class Color(r: Double, g: Double, b: Double) {
 }
 
 object Color {
-  val empty = Color(0,0,0)
+  val BLACK = Color(0,0,0)
 
   private def stringifyValue(v: Double): Int = {
     ceil(if (v > 1) 255 else if (v < 0) 0 else v * 255).toInt
