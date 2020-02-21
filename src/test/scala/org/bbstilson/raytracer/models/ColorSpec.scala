@@ -3,7 +3,6 @@ package org.bbstilson.raytracer.models
 import org.bbstilson.raytracer.UnitSpec
 
 class ColorSpec extends UnitSpec {
-  behavior of "Colors"
 
   it should "have accessible properties" in {
     val c = Color(-0.5,0.4,1.7)

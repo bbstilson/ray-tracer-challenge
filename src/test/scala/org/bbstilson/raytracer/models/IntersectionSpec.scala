@@ -3,7 +3,6 @@ package org.bbstilson.raytracer.models
 import org.bbstilson.raytracer.UnitSpec
 
 class IntersectionSpec extends UnitSpec {
-  behavior of "Intersection"
 
   it should "encapsulate t and Interactable object" in {
     val s = Sphere()

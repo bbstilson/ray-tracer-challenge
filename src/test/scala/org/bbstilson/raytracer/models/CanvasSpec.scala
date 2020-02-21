@@ -2,8 +2,7 @@ package org.bbstilson.raytracer.models
 
 import org.bbstilson.raytracer.UnitSpec
 
-class CanvasSpec extends UnitSpec {
-  behavior of "Canvas"
+class CanvasSpec extends UnitSpec {  
 
   it should "initialize with every pixel black" in {
     val c = new Canvas(10, 20)

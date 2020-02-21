@@ -5,7 +5,6 @@ import org.bbstilson.raytracer.UnitSpec
 import Math.{ PI }
 
 class TransformationSpec extends UnitSpec {
-  behavior of "Transformation"
 
   "Individual transformations" should "applied in sequence" in {
     val p = Point(1, 0, 1)

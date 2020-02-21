@@ -5,7 +5,6 @@ import org.bbstilson.raytracer.UnitSpec
 import Math.{ PI, sqrt }
 
 class SphereSpec extends UnitSpec {
-  behavior of "Sphere"
 
   it should "ray intersects a sphere at two points" in {
     val r = Ray(Point(0, 0, -5), SceneVector(0, 0, 1))

@@ -3,7 +3,6 @@ package org.bbstilson.raytracer.models
 import org.bbstilson.raytracer.UnitSpec
 
 class TranslationSpec extends UnitSpec {
-  behavior of "Translation"
 
   it should "multiply by a point" in {
     val transform = Translation(5, -3, 2)

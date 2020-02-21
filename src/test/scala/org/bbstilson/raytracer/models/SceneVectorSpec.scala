@@ -5,7 +5,6 @@ import org.bbstilson.raytracer.UnitSpec
 import Math.{ sqrt }
 
 class SceneVectorSpec extends UnitSpec {
-  behavior of "SceneVectors"
 
   it should "have accessible properties" in {
     val v = SceneVector(6.7,-9.0,-100)

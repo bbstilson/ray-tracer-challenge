@@ -5,7 +5,6 @@ import org.bbstilson.raytracer.UnitSpec
 import Math.{ PI, sqrt }
 
 class RotationSpec extends UnitSpec {
-  behavior of "Rotation"
 
   it should "rotate a point around the x axis" in {
     val p = Point(0, 1, 0)

@@ -3,7 +3,6 @@ package org.bbstilson.raytracer.utils
 import org.bbstilson.raytracer.UnitSpec
 
 class MathUtilsSpec extends UnitSpec {
-  behavior of "MathUtils"
 
   import MathUtils._
 

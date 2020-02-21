@@ -5,7 +5,6 @@ import org.bbstilson.raytracer.UnitSpec
 import Math.{ PI, sqrt }
 
 class ShearSpec extends UnitSpec {
-  behavior of "Shear"
 
   it should "move x in proportion to y " in {
     val transform = Shear(1, 0, 0, 0, 0, 0)

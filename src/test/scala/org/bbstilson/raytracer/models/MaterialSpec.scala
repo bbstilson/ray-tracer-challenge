@@ -5,7 +5,6 @@ import org.bbstilson.raytracer.UnitSpec
 import Math.sqrt
 
 class MaterialSpec extends UnitSpec {
-  behavior of "Material"
 
   val m = Material()
   val position = Point(0, 0, 0)

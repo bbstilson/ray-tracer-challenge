@@ -3,7 +3,6 @@ package org.bbstilson.raytracer.utils
 import org.bbstilson.raytracer.UnitSpec
 
 class MatrixUtilsSpec extends UnitSpec {
-  behavior of "MatrixUtils"
 
   "MatrixUtils.mkMatrix" should "make a matrix" in {
     val expected = Vector(

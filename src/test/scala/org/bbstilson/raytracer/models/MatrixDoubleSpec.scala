@@ -4,7 +4,6 @@ import org.bbstilson.raytracer.UnitSpec
 import org.bbstilson.raytracer.utils.MatrixUtils
 
 class MatrixDoubleSpec extends UnitSpec {
-  behavior of "MatrixDouble"
 
   it should "multiply by another matrix" in {
     val a = new MatrixDouble(

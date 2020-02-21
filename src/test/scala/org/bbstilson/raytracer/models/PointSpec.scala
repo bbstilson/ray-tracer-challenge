@@ -3,7 +3,6 @@ package org.bbstilson.raytracer.models
 import org.bbstilson.raytracer.UnitSpec
 
 class PointSpec extends UnitSpec {
-  behavior of "Points"
 
   it should "have accessible properties" in {
     val p = Point(4.3,-4.2,3.1)

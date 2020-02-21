@@ -3,7 +3,6 @@ package org.bbstilson.raytracer.models
 import org.bbstilson.raytracer.UnitSpec
 
 class ScaleSpec extends UnitSpec {
-  behavior of "Scale"
 
   it should "scale a point" in {
     val transform = Scale(2, 3, 4)
