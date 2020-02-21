@@ -1,0 +1,17 @@
+[ {
+  "id" : "root/compile",
+  "compilerVersion" : "0.22.0-RC1",
+  "compilerArguments" : [ "-language:implicitConversions" ],
+  "sourceDirectories" : [ "/Users/brandonstilson/projects/ray-tracer-challenge/src/main/scala-0.22", "/Users/brandonstilson/projects/ray-tracer-challenge/src/main/scala", "/Users/brandonstilson/projects/ray-tracer-challenge/src/main/java", "/Users/brandonstilson/projects/ray-tracer-challenge/target/scala-0.22/src_managed/main" ],
+  "dependencyClasspath" : [ "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/dev/travisbrown/scalactic_0.22/3.1.0-20200201-c4c847f-NIGHTLY/scalactic_0.22-3.1.0-20200201-c4c847f-NIGHTLY.jar", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/lamp/dotty-library_0.22/0.22.0-bin-20200201-c4c847f-NIGHTLY/dotty-library_0.22-0.22.0-bin-20200201-c4c847f-NIGHTLY.jar" ],
+  "classDirectory" : "/Users/brandonstilson/projects/ray-tracer-challenge/target/scala-0.22/classes",
+  "projectDependencies" : [ ]
+}, {
+  "id" : "root/test",
+  "compilerVersion" : "0.22.0-RC1",
+  "compilerArguments" : [ "-language:implicitConversions" ],
+  "sourceDirectories" : [ "/Users/brandonstilson/projects/ray-tracer-challenge/src/test/scala-0.22", "/Users/brandonstilson/projects/ray-tracer-challenge/src/test/scala", "/Users/brandonstilson/projects/ray-tracer-challenge/src/test/java", "/Users/brandonstilson/projects/ray-tracer-challenge/target/scala-0.22/src_managed/test" ],
+  "dependencyClasspath" : [ "/Users/brandonstilson/projects/ray-tracer-challenge/target/scala-0.22/classes", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/1.2.0/scala-xml_2.13-1.2.0.jar", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/ch/epfl/lamp/dotty-library_0.22/0.22.0-bin-20200201-c4c847f-NIGHTLY/dotty-library_0.22-0.22.0-bin-20200201-c4c847f-NIGHTLY.jar", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/dev/travisbrown/scalatest_0.22/3.1.0-20200201-c4c847f-NIGHTLY/scalatest_0.22-3.1.0-20200201-c4c847f-NIGHTLY.jar", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest-compatible/3.1.0/scalatest-compatible-3.1.0.jar", "/Users/brandonstilson/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/dev/travisbrown/scalactic_0.22/3.1.0-20200201-c4c847f-NIGHTLY/scalactic_0.22-3.1.0-20200201-c4c847f-NIGHTLY.jar" ],
+  "classDirectory" : "/Users/brandonstilson/projects/ray-tracer-challenge/target/scala-0.22/test-classes",
+  "projectDependencies" : [ "root/compile" ]
+} ]
