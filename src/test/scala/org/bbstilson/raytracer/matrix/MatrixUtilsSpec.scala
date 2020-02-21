@@ -1,4 +1,4 @@
-package org.bbstilson.raytracer.utils
+package org.bbstilson.raytracer.matrix
 
 import org.bbstilson.raytracer.UnitSpec
 

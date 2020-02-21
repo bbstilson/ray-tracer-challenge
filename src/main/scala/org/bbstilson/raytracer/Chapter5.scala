@@ -1,6 +1,7 @@
 package org.bbstilson.raytracer
 
 import org.bbstilson.raytracer.models._
+import org.bbstilson.raytracer.transforms._
 
 import Math.PI
 

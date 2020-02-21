@@ -1,7 +1,7 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.matrix
 
-import org.bbstilson.raytracer.utils.{ MatrixUtils, MathUtils }
-import MathUtils._
+import org.bbstilson.raytracer.models._
+import org.bbstilson.raytracer.utils.MathUtils._
 import MatrixUtils._
 import MatrixDouble._
 
@@ -108,7 +108,7 @@ object MatrixDouble {
   private def dotProduct(a: Row, b: Row): Double = {
     a
       .zip(b)
-      .map({ case (n, m) => n * m })
+      .map { case (n, m) => n * m }
       .reduceLeft(_ + _)
   }
 

@@ -1,4 +1,4 @@
-package org.bbstilson.raytracer.utils
+package org.bbstilson.raytracer.matrix
 
 object MatrixUtils {
   type Row = Vector[Double]

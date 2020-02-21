@@ -1,7 +1,6 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.matrix
 
 import org.bbstilson.raytracer.UnitSpec
-import org.bbstilson.raytracer.utils.MatrixUtils
 
 class MatrixDoubleSpec extends UnitSpec {
 

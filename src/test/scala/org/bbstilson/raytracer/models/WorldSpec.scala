@@ -1,7 +1,7 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.transforms._
 import org.bbstilson.raytracer.UnitSpec
-import org.scalactic.source.Position.here
 
 class WorldSpec extends UnitSpec {
   val s1 = Sphere(
