@@ -15,7 +15,7 @@ class IntersectionSpec extends UnitSpec {
     val s = Sphere()
     val i1 = Intersection(1, s)
     val i2 = Intersection(2, s)
-    val intersections = Seq(i2, i1)
+    val intersections = List(i2, i1)
     val i = Intersection.hit(intersections)
     i should be(Some(i1))
   }
@@ -24,7 +24,7 @@ class IntersectionSpec extends UnitSpec {
     val s = Sphere()
     val i1 = Intersection(-1, s)
     val i2 = Intersection(1, s)
-    val intersections = Seq(i2, i1)
+    val intersections = List(i2, i1)
     val i = Intersection.hit(intersections)
     i should be(Some(i2))
   }
@@ -33,7 +33,7 @@ class IntersectionSpec extends UnitSpec {
     val s = Sphere()
     val i1 = Intersection(-2, s)
     val i2 = Intersection(-1, s)
-    val intersections = Seq(i2, i1)
+    val intersections = List(i2, i1)
     val i = Intersection.hit(intersections)
     i should be(None)
   }
@@ -44,7 +44,7 @@ class IntersectionSpec extends UnitSpec {
     val i2 = Intersection(7, s)
     val i3 = Intersection(-3, s)
     val i4 = Intersection(2, s)
-    val intersections = Seq(i1, i2, i3, i4)
+    val intersections = List(i1, i2, i3, i4)
     val i = Intersection.hit(intersections)
     i should be(Some(i4))
   }

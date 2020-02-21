@@ -26,7 +26,7 @@ final case class IntersectionComputations(
 )
 
 object Intersection {
-  def hit(xs: Seq[Intersection]): Option[Intersection] = {
+  def hit(xs: List[Intersection]): Option[Intersection] = {
     xs
       .filter(_.t > 0)
       .sortBy(_.t)
