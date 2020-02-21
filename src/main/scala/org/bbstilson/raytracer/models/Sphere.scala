@@ -9,7 +9,7 @@ case class Sphere(
   material: Material = Material()
 ) extends Interactable {
 
-  def intersect(r: Ray): Seq[Intersection] = {
+  def intersect(r: Ray): List[Intersection] = {
     val ray = r.transform(transform.inverse)
     // The vector from the sphere's center, to the ray origin.
     val sphereToRay = ray.origin - Point(0, 0, 0)
@@ -19,12 +19,12 @@ case class Sphere(
     val discriminant = pow(b, 2) - 4 * a * c
 
     discriminant match {
-      case d if d < 0 => Seq.empty
+      case d if d < 0 => Nil
       case d => {
         val x1 = (-b - sqrt(d)) / (2 * a)
         val x2 = (-b + sqrt(d)) / (2 * a)
 
-        Seq(
+        List(
           Intersection(x1, this),
           Intersection(x2, this)
         )
