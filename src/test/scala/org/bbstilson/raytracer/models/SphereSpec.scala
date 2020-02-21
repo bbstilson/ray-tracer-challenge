@@ -113,7 +113,7 @@ class SphereSpec extends UnitSpec {
 
   it should "be created with a material" in {
     val m = Material(ambient = 1d)
-    val s = Sphere(mat = m)
+    val s = Sphere(material = m)
     s.material should be(m)
   }
 }
