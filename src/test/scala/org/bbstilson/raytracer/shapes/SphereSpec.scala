@@ -1,5 +1,6 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.shapes
 
+import org.bbstilson.raytracer.models._
 import org.bbstilson.raytracer.transforms._
 import org.bbstilson.raytracer.UnitSpec
 

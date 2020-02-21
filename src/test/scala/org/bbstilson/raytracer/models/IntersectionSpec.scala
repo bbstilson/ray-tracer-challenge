@@ -1,5 +1,6 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.shapes._
 import org.bbstilson.raytracer.UnitSpec
 
 class IntersectionSpec extends UnitSpec {
