@@ -4,7 +4,7 @@ This repo holds the code for a ray tracer following this book: [The Ray Tracer C
 
 ## Getting started
 
-This project uses [Scala 3](https://dotty.epfl.ch/) and [SBT](https://www.scala-sbt.org/) version 1.3.8.
+This project uses [Scala 2.13](https://scala-lang.org/) and [SBT](https://www.scala-sbt.org/) version 1.3.8.
 
 Once everything is installed, you should be able to run the following:
 
