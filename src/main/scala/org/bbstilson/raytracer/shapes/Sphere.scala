@@ -2,6 +2,7 @@ package org.bbstilson.raytracer.shapes
 
 import org.bbstilson.raytracer.matrix._
 import org.bbstilson.raytracer.models._
+import org.bbstilson.raytracer.view._
 import MatrixUtils._
 
 import Math.{pow, sqrt}

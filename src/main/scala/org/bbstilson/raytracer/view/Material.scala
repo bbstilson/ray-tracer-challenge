@@ -1,4 +1,6 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.view
+
+import org.bbstilson.raytracer.models._
 
 import Math.pow
 

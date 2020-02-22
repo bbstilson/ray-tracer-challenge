@@ -1,5 +1,6 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.view._
 import org.bbstilson.raytracer.UnitSpec
 
 class PointLightSpec extends UnitSpec {

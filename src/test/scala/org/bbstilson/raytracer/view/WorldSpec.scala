@@ -1,7 +1,8 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.view
 
-import org.bbstilson.raytracer.transforms._
+import org.bbstilson.raytracer.models._
 import org.bbstilson.raytracer.shapes._
+import org.bbstilson.raytracer.transforms._
 import org.bbstilson.raytracer.UnitSpec
 
 class WorldSpec extends UnitSpec {

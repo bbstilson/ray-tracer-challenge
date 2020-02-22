@@ -1,6 +1,6 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.view
 
-import Ordering.Double.TotalOrdering
+import org.bbstilson.raytracer.models._
 
 final case class World(
   objects: List[Interactable] = Nil,

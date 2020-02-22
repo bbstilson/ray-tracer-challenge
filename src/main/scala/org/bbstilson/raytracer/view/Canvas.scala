@@ -1,4 +1,4 @@
-package org.bbstilson.raytracer.models
+package org.bbstilson.raytracer.view
 
 import java.io.{File, PrintWriter}
 
@@ -11,8 +11,7 @@ class Canvas(val width: Int, val height: Int) {
       h <- (0 to height - 1)
     } yield (w, h)
 
-    ps.map(t => (t, Color.BLACK))
-      .toMap
+    ps.map(t => (t, Color.BLACK)).toMap
   }
 
   def writePixel(x: Int, y: Int, c: Color): Unit = {
