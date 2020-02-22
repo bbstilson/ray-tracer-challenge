@@ -1,9 +1,9 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.view._
 import org.bbstilson.raytracer.UnitSpec
 
 class PointLightSpec extends UnitSpec {
-  behavior of "PointLight"
 
   it should "have a position and intensity" in {
     val intensity = Color(1, 1, 1)

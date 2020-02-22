@@ -1,4 +1,3 @@
-val dottyVersion = "0.22.0-RC1"
 val scala213Version = "2.13.1"
 
 lazy val root = project
@@ -6,20 +5,14 @@ lazy val root = project
   .settings(
     name := "ray-tracer-challenge",
     version := "0.0.1",
-
     libraryDependencies ++= Seq(
-      "dev.travisbrown" %% "scalactic" % "3.1.0-20200201-c4c847f-NIGHTLY",
-      "dev.travisbrown" %% "scalatest" % "3.1.0-20200201-c4c847f-NIGHTLY" % Test
+      "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0",
+      "org.scalactic" %% "scalactic" % "3.1.1",
+      "org.scalatest" %% "scalatest" % "3.1.1" % Test
     ),
-    // libraryDependencies := libraryDependencies.value.map(_.withDottyCompat(scalaVersion.value)),
-
-    // To make the default compiler and REPL use Dotty
-    scalaVersion := dottyVersion,
-
-    // To cross compile with Dotty and Scala 2
-    crossScalaVersions := Seq(dottyVersion, scala213Version),
-
+    scalaVersion := scala213Version,
+    resolvers += "Artima Maven Repository".at("https://repo.artima.com/releases"),
     scalacOptions ++= Seq(
-      "-language:implicitConversions"
+      "-deprecation"
     )
   )

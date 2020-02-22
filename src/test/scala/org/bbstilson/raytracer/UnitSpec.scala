@@ -1,5 +1,6 @@
 package org.bbstilson.raytracer
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-trait UnitSpec extends FlatSpec with Matchers
+trait UnitSpec extends AnyFlatSpec with Matchers

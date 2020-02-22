@@ -1,6 +1,9 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.view.Material
+
 trait Interactable {
-  val material: Material
+  def material: Material
   def normalAt(p: Point): SceneVector
+  def intersect(r: Ray): List[Intersection]
 }

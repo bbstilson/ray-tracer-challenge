@@ -4,13 +4,9 @@ This repo holds the code for a ray tracer following this book: [The Ray Tracer C
 
 ## Getting started
 
-This project uses [Scala](https://scala-lang.org/) version 2.12.8 and [SBT](https://www.scala-sbt.org/) version 1.2.8. If you're on OSX, both can be installed via [Homebrew](https://brew.sh/).
+This project uses [Scala 2.13](https://scala-lang.org/) and [SBT](https://www.scala-sbt.org/) version 1.3.8.
 
 Once everything is installed, you should be able to run the following:
-
-```
-> sbt update
-```
 
 ## Running the Main files
 

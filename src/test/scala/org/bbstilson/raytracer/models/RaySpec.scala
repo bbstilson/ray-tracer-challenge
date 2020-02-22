@@ -1,9 +1,9 @@
 package org.bbstilson.raytracer.models
 
+import org.bbstilson.raytracer.transforms._
 import org.bbstilson.raytracer.UnitSpec
 
 class RaySpec extends UnitSpec {
-  behavior of "Ray"
 
   it should "be query-able" in {
     val origin = Point(1, 2, 3)
