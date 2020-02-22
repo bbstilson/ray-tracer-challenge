@@ -6,6 +6,7 @@ lazy val root = project
     name := "ray-tracer-challenge",
     version := "0.0.1",
     libraryDependencies ++= Seq(
+      "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0",
       "org.scalactic" %% "scalactic" % "3.1.1",
       "org.scalatest" %% "scalatest" % "3.1.1" % Test
     ),

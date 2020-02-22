@@ -1,4 +1,4 @@
-package org.bbstilson.raytracer
+package org.bbstilson.raytracer.chapters
 
 import org.bbstilson.raytracer.models._
 

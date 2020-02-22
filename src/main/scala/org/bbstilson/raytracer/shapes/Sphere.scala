@@ -43,3 +43,7 @@ case class Sphere(
     worldNormal.normalize
   }
 }
+
+object Sphere {
+  def apply(ts: List[MatrixDouble], m: Material): Sphere = Sphere(ts.reduceRight(_ * _), m)
+}

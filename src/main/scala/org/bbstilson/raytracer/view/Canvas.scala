@@ -2,9 +2,10 @@ package org.bbstilson.raytracer.view
 
 import java.io.{File, PrintWriter}
 
-class Canvas(val width: Int, val height: Int) {
+case class Canvas(width: Int, height: Int) {
 
   // Mutable variable with map of pixels.
+  // TODO: Make this a mutable map, too.
   var pixels: Map[(Int, Int), Color] = {
     val ps = for {
       w <- (0 to width - 1)
@@ -15,21 +16,16 @@ class Canvas(val width: Int, val height: Int) {
   }
 
   def writePixel(x: Int, y: Int, c: Color): Unit = {
-    val pos = (x, y)
-    pixelAt(pos) match {
-      case Some(_) => pixels = pixels + (pos -> c)
+    pixelAt(x, y) match {
+      case Some(_) => pixels = pixels + ((x, y) -> c)
       case None    => // do nothing
     }
   }
 
-  def pixelAt(pos: (Int, Int)): Option[Color] = pixels.get(pos)
+  def pixelAt(x: Int, y: Int): Option[Color] = pixels.get((x, y))
 
   def toPPM: Seq[String] = {
-    val header = Seq(
-      "P3",
-      s"$width $height",
-      "255"
-    )
+    val header = Seq("P3", s"$width $height", "255")
 
     val body = (0 to height - 1)
       .map(h =>
