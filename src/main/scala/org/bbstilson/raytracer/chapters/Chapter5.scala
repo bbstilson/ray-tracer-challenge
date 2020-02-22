@@ -37,10 +37,8 @@ object Chapter5 {
           val ray = Ray(rayOrigin, normalizedPosition)
 
           Intersection.hit(sphere.intersect(ray)) match {
-            case Some(h) => {
-              canvas.writePixel(x, y, red)
-            }
-            case _ => // Miss. Do nothing
+            case Some(h) => canvas.writePixel(x, y, red)
+            case _       => // Miss. Do nothing
           }
         }
       }

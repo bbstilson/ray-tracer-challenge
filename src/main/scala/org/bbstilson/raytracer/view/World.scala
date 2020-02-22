@@ -2,6 +2,8 @@ package org.bbstilson.raytracer.view
 
 import org.bbstilson.raytracer.models._
 
+import Ordering.Double.TotalOrdering
+
 final case class World(
   objects: List[Interactable] = Nil,
   light: Option[PointLight] = None
