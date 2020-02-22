@@ -4,7 +4,7 @@ import org.bbstilson.raytracer.models._
 import org.bbstilson.raytracer.transforms._
 import org.bbstilson.raytracer.UnitSpec
 
-import Math.{ PI, sqrt }
+import Math.{sqrt, PI}
 
 class SphereSpec extends UnitSpec {
 
@@ -85,13 +85,13 @@ class SphereSpec extends UnitSpec {
 
   it should "compute the normal at a non-axial point" in {
     val s = Sphere()
-    val n = s.normalAt(Point(sqrt(3)/3, sqrt(3)/3, sqrt(3)/3))
-    n should be(SceneVector(sqrt(3)/3, sqrt(3)/3, sqrt(3)/3))
+    val n = s.normalAt(Point(sqrt(3) / 3, sqrt(3) / 3, sqrt(3) / 3))
+    n should be(SceneVector(sqrt(3) / 3, sqrt(3) / 3, sqrt(3) / 3))
   }
 
   it should "have a normalized normal" in {
     val s = Sphere()
-    val n = s.normalAt(Point(sqrt(3)/3, sqrt(3)/3, sqrt(3)/3))
+    val n = s.normalAt(Point(sqrt(3) / 3, sqrt(3) / 3, sqrt(3) / 3))
     n should be(n.normalize)
   }
 
@@ -102,8 +102,8 @@ class SphereSpec extends UnitSpec {
   }
 
   it should "compute the normal on a transformed sphere" in {
-    val s = Sphere(Scale(1, 0.5, 1) * RotationZ(PI/5))
-    val n = s.normalAt(Point(0, sqrt(2)/2, -sqrt(2)/2))
+    val s = Sphere(Scale(1, 0.5, 1) * RotationZ(PI / 5))
+    val n = s.normalAt(Point(0, sqrt(2) / 2, -sqrt(2) / 2))
     n should be(SceneVector(0, 0.97014, -0.24254))
   }
 

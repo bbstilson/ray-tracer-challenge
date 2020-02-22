@@ -2,7 +2,7 @@ package org.bbstilson.raytracer.models
 
 import org.bbstilson.raytracer.utils.MathUtils._
 
-import Math.{ pow, sqrt }
+import Math.{pow, sqrt}
 
 case class SceneVector(x: Double, y: Double, z: Double) {
   def +(v: SceneVector): SceneVector = SceneVector(x + v.x, y + v.y, z + v.z)
@@ -29,11 +29,12 @@ case class SceneVector(x: Double, y: Double, z: Double) {
 
   override def equals(other: Any) = other match {
     case c: SceneVector => (x ~= c.x) && (y ~= c.y) && (z ~= c.z)
-    case _ => false
+    case _              => false
   }
 }
 
 object SceneVector {
+
   def reflect(in: SceneVector, normal: SceneVector): SceneVector = {
     in - normal * 2 * in.dot(normal)
   }

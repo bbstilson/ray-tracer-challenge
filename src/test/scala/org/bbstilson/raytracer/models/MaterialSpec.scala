@@ -18,7 +18,7 @@ class MaterialSpec extends UnitSpec {
   }
 
   it should "light with the eye between light and surface, eye offset 45°" in {
-    val eye = SceneVector(0, sqrt(2)/2, -sqrt(2)/2)
+    val eye = SceneVector(0, sqrt(2) / 2, -sqrt(2) / 2)
     val normal = SceneVector(0, 0, -1)
     val light = PointLight(Point(0, 0, -10), Color(1, 1, 1))
     val result = m.light(light, position, eye, normal)
@@ -34,7 +34,7 @@ class MaterialSpec extends UnitSpec {
   }
 
   it should "light with eye in the path of the reflection vector" in {
-    val eye = SceneVector(0, -sqrt(2)/2, -sqrt(2)/2)
+    val eye = SceneVector(0, -sqrt(2) / 2, -sqrt(2) / 2)
     val normal = SceneVector(0, 0, -1)
     val light = PointLight(Point(0, 10, -10), Color(1, 1, 1))
     val result = m.light(light, position, eye, normal)

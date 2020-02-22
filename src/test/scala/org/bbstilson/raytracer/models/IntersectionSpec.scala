@@ -51,20 +51,20 @@ class IntersectionSpec extends UnitSpec {
   }
 
   "prepareComputations" should "precomputes intersection data" in {
-    val r = Ray(Point(0,0,-5),SceneVector(0,0,1))
+    val r = Ray(Point(0, 0, -5), SceneVector(0, 0, 1))
     val shape = Sphere()
     val i = Intersection(4, shape)
 
     val c = i.prepareComputations(r)
     c.t shouldBe i.t
     c.o shouldBe i.o
-    c.point shouldBe Point(0,0,-1)
-    c.eyeV shouldBe SceneVector(0,0,-1)
-    c.normalV shouldBe SceneVector(0,0,-1)
+    c.point shouldBe Point(0, 0, -1)
+    c.eyeV shouldBe SceneVector(0, 0, -1)
+    c.normalV shouldBe SceneVector(0, 0, -1)
   }
 
   it should "set inside to false when the interaction occurs on the outside" in {
-    val r = Ray(Point(0,0,-5), SceneVector(0,0,1))
+    val r = Ray(Point(0, 0, -5), SceneVector(0, 0, 1))
     val shape = Sphere()
     val i = Intersection(4, shape)
     val c = i.prepareComputations(r)
@@ -77,8 +77,8 @@ class IntersectionSpec extends UnitSpec {
     val i = Intersection(1, shape)
     val c = i.prepareComputations(r)
     c.point shouldBe Point(0, 0, 1)
-    c.eyeV shouldBe SceneVector(0,0,-1)
-    c.normalV shouldBe SceneVector(0,0,-1)
+    c.eyeV shouldBe SceneVector(0, 0, -1)
+    c.normalV shouldBe SceneVector(0, 0, -1)
     c.inside shouldBe true
   }
 }

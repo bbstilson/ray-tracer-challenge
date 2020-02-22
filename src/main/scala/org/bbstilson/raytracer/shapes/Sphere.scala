@@ -4,7 +4,7 @@ import org.bbstilson.raytracer.matrix._
 import org.bbstilson.raytracer.models._
 import MatrixUtils._
 
-import Math.{ pow, sqrt }
+import Math.{pow, sqrt}
 
 case class Sphere(
   transform: MatrixDouble = new MatrixDouble(identity),

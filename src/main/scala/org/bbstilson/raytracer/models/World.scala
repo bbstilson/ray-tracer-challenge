@@ -6,6 +6,7 @@ final case class World(
   objects: List[Interactable] = Nil,
   light: Option[PointLight] = None
 ) {
+
   def intersect(r: Ray): List[Intersection] = {
     objects.flatMap(_.intersect(r)).sortBy(_.t)
   }
@@ -13,7 +14,7 @@ final case class World(
   def shadeHit(c: IntersectionComputations): Color = {
     light match {
       case Some(l) => c.o.material.light(l, c.point, c.eyeV, c.normalV)
-      case None => throw new Exception("Tried to render a scene without any lights!")
+      case None    => throw new Exception("Tried to render a scene without any lights!")
     }
   }
 

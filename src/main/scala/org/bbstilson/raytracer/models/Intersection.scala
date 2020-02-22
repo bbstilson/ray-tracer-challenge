@@ -3,6 +3,7 @@ package org.bbstilson.raytracer.models
 import Ordering.Double.TotalOrdering
 
 final case class Intersection(t: Double, o: Interactable) {
+
   def prepareComputations(r: Ray): IntersectionComputations = {
     val point = r.position(t)
     val eyeV = -r.direction
@@ -22,13 +23,13 @@ final case class IntersectionComputations(
   point: Point,
   eyeV: SceneVector,
   normalV: SceneVector,
-  inside: Boolean,
+  inside: Boolean
 )
 
 object Intersection {
+
   def hit(xs: List[Intersection]): Option[Intersection] = {
-    xs
-      .filter(_.t > 0)
+    xs.filter(_.t > 0)
       .sortBy(_.t)
       .headOption
   }

@@ -2,7 +2,7 @@ package org.bbstilson.raytracer.models
 
 import org.bbstilson.raytracer.utils.MathUtils._
 
-import Math.{ ceil }
+import Math.{ceil}
 
 case class Color(r: Double, g: Double, b: Double) {
   def +(v: Color): Color = Color(r + v.r, g + v.g, b + v.b)
@@ -20,12 +20,12 @@ case class Color(r: Double, g: Double, b: Double) {
 
   override def equals(other: Any) = other match {
     case c: Color => (r ~= c.r) && (g ~= c.g) && (b ~= c.b)
-    case _ => false
+    case _        => false
   }
 }
 
 object Color {
-  val BLACK = Color(0,0,0)
+  val BLACK = Color(0, 0, 0)
 
   private def stringifyValue(v: Double): Int = {
     ceil(if (v > 1) 255 else if (v < 0) 0 else v * 255).toInt

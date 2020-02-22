@@ -3,7 +3,7 @@ package org.bbstilson.raytracer.transforms
 import org.bbstilson.raytracer.models._
 import org.bbstilson.raytracer.UnitSpec
 
-import Math.{ PI }
+import Math.{PI}
 
 class TransformationSpec extends UnitSpec {
 

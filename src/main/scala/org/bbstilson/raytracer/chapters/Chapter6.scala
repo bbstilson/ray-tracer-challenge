@@ -7,6 +7,7 @@ import org.bbstilson.raytracer.shapes._
 import Math.PI
 
 object Chapter6 {
+
   def main(args: Array[String]): Unit = {
     // Lighting
     val lightPosition = Point(-10, 10, -10)
@@ -27,7 +28,7 @@ object Chapter6 {
     val half = wallSize / 2
 
     val canvas = new Canvas(canvasPixels, canvasPixels)
-    val red = Color(1,0,0)
+    val red = Color(1, 0, 0)
 
     (0 until canvasPixels).foreach { y =>
       (0 until canvasPixels).foreach { x =>

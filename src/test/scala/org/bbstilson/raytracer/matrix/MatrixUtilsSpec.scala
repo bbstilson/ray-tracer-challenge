@@ -16,13 +16,13 @@ class MatrixUtilsSpec extends UnitSpec {
   }
 
   "MatrixUtils.identity" should "return an identity matrix" in {
-     val expected = Vector(
-       Vector(1d,0d,0d,0d),
-       Vector(0d,1d,0d,0d),
-       Vector(0d,0d,1d,0d),
-       Vector(0d,0d,0d,1d)
-     )
+    val expected = Vector(
+      Vector(1d, 0d, 0d, 0d),
+      Vector(0d, 1d, 0d, 0d),
+      Vector(0d, 0d, 1d, 0d),
+      Vector(0d, 0d, 0d, 1d)
+    )
 
-     MatrixUtils.identity should be(expected)
+    MatrixUtils.identity should be(expected)
   }
 }

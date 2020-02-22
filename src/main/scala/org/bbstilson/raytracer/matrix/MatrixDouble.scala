@@ -19,9 +19,7 @@ class MatrixDouble(vec: Matrix) {
     val oTransposed = other.transpose
     val cols = (0 until oTransposed.cols).toVector.map(i => oTransposed.row(i))
     new MatrixDouble(
-      for (row <- vec) yield
-        for (col <- cols) yield
-          dotProduct(row, col)
+      for (row <- vec) yield for (col <- cols) yield dotProduct(row, col)
     )
   }
 
@@ -40,11 +38,11 @@ class MatrixDouble(vec: Matrix) {
   }
 
   def +(other: MatrixDouble): MatrixDouble = {
-    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r,c) + other(r,c)))
+    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r, c) + other(r, c)))
   }
 
   def -(other: MatrixDouble): MatrixDouble = {
-    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r,c) - other(r, c)))
+    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r, c) - other(r, c)))
   }
 
   def transpose: MatrixDouble = new MatrixDouble(vec.transpose)
@@ -100,14 +98,18 @@ class MatrixDouble(vec: Matrix) {
   }
 
   override def toString: String = {
-    "\n" + vec.map { r => r.mkString("\t") }.mkString("\n") + "\n"
+    "\n" + vec
+      .map { r =>
+        r.mkString("\t")
+      }
+      .mkString("\n") + "\n"
   }
 }
 
 object MatrixDouble {
+
   private def dotProduct(a: Row, b: Row): Double = {
-    a
-      .zip(b)
+    a.zip(b)
       .map { case (n, m) => n * m }
       .reduceLeft(_ + _)
   }
@@ -115,9 +117,9 @@ object MatrixDouble {
   private def drop1[A](xs: Vector[A], i: Int): Vector[A] = {
     val size = xs.size
     (i, size) match {
-      case (0, _) => xs.tail
+      case (0, _)               => xs.tail
       case _ if (i + 1 == size) => xs.init
-      case _ => xs.dropRight(size - i) ++ xs.drop(i + 1)
+      case _                    => xs.dropRight(size - i) ++ xs.drop(i + 1)
     }
   }
 }

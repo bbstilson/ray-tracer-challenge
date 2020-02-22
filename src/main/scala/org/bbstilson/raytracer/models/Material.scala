@@ -9,6 +9,7 @@ case class Material(
   specular: Double,
   shininess: Double
 ) {
+
   def light(
     light: PointLight,
     point: Point,
@@ -57,6 +58,7 @@ case class Material(
 }
 
 object Material {
+
   def apply(
     color: Color = Color(1, 1, 1),
     ambient: Double = 0.1,

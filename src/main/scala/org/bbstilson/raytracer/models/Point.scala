@@ -10,6 +10,6 @@ case class Point(x: Double, y: Double, z: Double) {
 
   override def equals(other: Any) = other match {
     case c: Point => (x ~= c.x) && (y ~= c.y) && (z ~= c.z)
-    case _ => false
+    case _        => false
   }
 }

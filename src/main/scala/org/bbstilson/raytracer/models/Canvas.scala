@@ -1,6 +1,6 @@
 package org.bbstilson.raytracer.models
 
-import java.io.{ File, PrintWriter }
+import java.io.{File, PrintWriter}
 
 class Canvas(val width: Int, val height: Int) {
 
@@ -11,8 +11,7 @@ class Canvas(val width: Int, val height: Int) {
       h <- (0 to height - 1)
     } yield (w, h)
 
-    ps
-      .map(t => (t, Color.BLACK))
+    ps.map(t => (t, Color.BLACK))
       .toMap
   }
 
@@ -20,7 +19,7 @@ class Canvas(val width: Int, val height: Int) {
     val pos = (x, y)
     pixelAt(pos) match {
       case Some(_) => pixels = pixels + (pos -> c)
-      case None => // do nothing
+      case None    => // do nothing
     }
   }
 
@@ -34,8 +33,10 @@ class Canvas(val width: Int, val height: Int) {
     )
 
     val body = (0 to height - 1)
-      .map(h => (0 to width - 1)
-        .map(w => pixels((w, h)).toString).mkString(" ")
+      .map(h =>
+        (0 to width - 1)
+          .map(w => pixels((w, h)).toString)
+          .mkString(" ")
       )
       .flatMap(chopLine)
 

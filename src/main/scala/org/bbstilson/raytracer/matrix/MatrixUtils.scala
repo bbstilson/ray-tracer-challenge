@@ -5,9 +5,7 @@ object MatrixUtils {
   type Matrix = Vector[Row]
 
   def mkMatrix(rs: Int, cs: Int, f: (Int, Int) => Double): Matrix = {
-    for (r <- (0 until rs).toVector) yield
-      for (c <- (0 until cs).toVector) yield
-        f(r, c)
+    for (r <- (0 until rs).toVector) yield for (c <- (0 until cs).toVector) yield f(r, c)
   }
 
   def identity: Matrix = {
