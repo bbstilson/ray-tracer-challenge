@@ -38,11 +38,11 @@ class MatrixDouble(vec: Matrix) {
   }
 
   def +(other: MatrixDouble): MatrixDouble = {
-    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r, c) + other(r, c)))
+    new MatrixDouble(MatrixUtils.mkMatrix((r: Int, c: Int, _) => this(r, c) + other(r, c)))
   }
 
   def -(other: MatrixDouble): MatrixDouble = {
-    new MatrixDouble(MatrixUtils.mkMatrix(rows, cols, (r, c) => this(r, c) - other(r, c)))
+    new MatrixDouble(MatrixUtils.mkMatrix((r: Int, c: Int, _) => this(r, c) - other(r, c)))
   }
 
   def transpose: MatrixDouble = new MatrixDouble(vec.transpose)

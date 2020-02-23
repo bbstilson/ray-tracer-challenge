@@ -59,13 +59,13 @@ class MatrixDoubleSpec extends UnitSpec {
         Vector(4d, 8d, 16d, 32d)
       )
     )
-    val identity = new MatrixDouble(MatrixUtils.identity)
+    val identity = new MatrixDouble(MatrixUtils.getIdentityMatrix)
     a * identity should be(a)
   }
 
   it should "multiply an identity matrix with a row" in {
     val r = Vector(1d, 2d, 3d, 4d)
-    val identity = new MatrixDouble(MatrixUtils.identity)
+    val identity = new MatrixDouble(MatrixUtils.getIdentityMatrix)
     identity * r should be(r)
   }
 

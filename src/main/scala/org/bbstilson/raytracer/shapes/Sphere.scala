@@ -8,7 +8,7 @@ import MatrixUtils._
 import Math.{pow, sqrt}
 
 case class Sphere(
-  transform: MatrixDouble = new MatrixDouble(identity),
+  transform: MatrixDouble = new MatrixDouble(MatrixUtils.getIdentityMatrix),
   material: Material = Material()
 ) extends Interactable {
 

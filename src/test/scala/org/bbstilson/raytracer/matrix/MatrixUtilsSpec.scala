@@ -12,7 +12,7 @@ class MatrixUtilsSpec extends UnitSpec {
       Vector(3, 4, 5, 6)
     )
 
-    MatrixUtils.mkMatrix(4, 4, (r, c) => r + c) shouldBe expected
+    MatrixUtils.mkMatrix((r: Int, c: Int, _) => r + c) shouldBe expected
   }
 
   "MatrixUtils.identity" should "return an identity matrix" in {
@@ -23,6 +23,6 @@ class MatrixUtilsSpec extends UnitSpec {
       Vector(0d, 0d, 0d, 1d)
     )
 
-    MatrixUtils.identity shouldBe expected
+    MatrixUtils.getIdentityMatrix shouldBe expected
   }
 }

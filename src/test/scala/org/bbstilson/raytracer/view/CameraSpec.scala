@@ -14,7 +14,7 @@ class CameraSpec extends UnitSpec with WorldUtils {
     c.hSize shouldBe 160
     c.vSize shouldBe 120
     c.fieldOfView shouldBe Math.PI / 2
-    c.transform shouldBe new MatrixDouble(MatrixUtils.identity)
+    c.transform shouldBe new MatrixDouble(MatrixUtils.getIdentityMatrix)
   }
 
   it should "know the size of the pixels on the canvas" in {
@@ -50,8 +50,7 @@ class CameraSpec extends UnitSpec with WorldUtils {
     val from = Point(0, 0, -5)
     val to = Point(0, 0, 0)
     val up = SceneVector(0, 1, 0)
-    val c = Camera(11, 11, Math.PI / 2, ViewTransform.move(from, to, up))
-
+    val c = Camera(11, 11, Math.PI / 2, ViewTransform(from, to, up))
     c.render(w).pixelAt(5, 5) shouldBe Some(Color(0.38066, 0.47583, 0.2855))
   }
 }

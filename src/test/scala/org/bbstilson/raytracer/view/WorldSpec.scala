@@ -44,7 +44,7 @@ class WorldSpec extends UnitSpec with WorldUtils {
 
   "colorAt" should "color when a ray misses" in {
     val r = Ray(Point(0, 0, -5), SceneVector(0, 1, 0))
-    w.colorAt(r) shouldBe Color(0, 0, 0)
+    w.colorAt(r) shouldBe Color.BLACK
   }
 
   it should "color when a ray hits" in {

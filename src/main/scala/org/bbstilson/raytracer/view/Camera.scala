@@ -11,7 +11,7 @@ final case class Camera(
   hSize: Int,
   vSize: Int,
   fieldOfView: Double,
-  transform: MatrixDouble = new MatrixDouble(identity)
+  transform: MatrixDouble = new MatrixDouble(getIdentityMatrix)
 ) {
 
   val halfView = Math.tan(fieldOfView / 2)
@@ -47,8 +47,8 @@ final case class Camera(
     val canvas = Canvas(hSize, vSize)
 
     val pixels = for {
-      y <- 0 to (vSize - 1)
-      x <- 0 to (hSize - 1)
+      y <- 0 until vSize
+      x <- 0 until hSize
       ray = rayForPixel(x, y)
       color = w.colorAt(ray)
     } yield (x, y, color)

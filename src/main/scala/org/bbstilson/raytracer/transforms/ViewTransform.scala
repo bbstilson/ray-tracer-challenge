@@ -5,7 +5,7 @@ import org.bbstilson.raytracer.models._
 
 object ViewTransform {
 
-  def move(from: Point, to: Point, up: SceneVector): MatrixDouble = {
+  def apply(from: Point, to: Point, up: SceneVector): MatrixDouble = {
     val forward = (to - from).normalize
     val left = forward.cross(up.normalize)
     val trueUp = left.cross(forward)

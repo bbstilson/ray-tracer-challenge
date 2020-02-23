@@ -24,7 +24,7 @@ final case class World(
     Intersection
       .hit(intersect(r))
       .map(_.prepareComputations(r))
-      .map(shadeHit _)
+      .map(shadeHit)
       .getOrElse(Color.BLACK)
   }
 }
