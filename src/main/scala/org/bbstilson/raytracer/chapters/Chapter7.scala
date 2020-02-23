@@ -37,13 +37,13 @@ object Chapter7 {
       List(Translation(-1.5, 0.33, -0.75), Scale(0.33, 0.33, 0.33)),
       Material(color = Color(1, 0.8, 0.1), diffuse = 0.7, specular = 0.3)
     )
-    val light = PointLight(Point(-10, 10, -10), Color(1, 1, 1))
+    val light = PointLight(Point(-10, 10, -10), Color.WHITE)
     val world = World(
       List(floor, leftWall, rightWall, leftBall, middleBall, rightBall),
       Some(light)
     )
-    val view = ViewTransform.move(Point(0, 1.5, -5), Point(0, 1, 0), SceneVector(0, 1, 0))
-    val camera = Camera(300, 150, Math.PI / 3, view)
+    val view = ViewTransform(Point(0, 1.5, -5), Point(0, 1, 0), SceneVector(0, 1, 0))
+    val camera = Camera(100, 50, Math.PI / 3, view)
 
     camera.render(world).save
 
