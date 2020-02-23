@@ -49,12 +49,12 @@ final case class Camera(
     val pixels = for {
       y <- 0 to (vSize - 1)
       x <- 0 to (hSize - 1)
-    } yield (x, y)
+      ray = rayForPixel(x, y)
+      color = w.colorAt(ray)
+    } yield (x, y, color)
 
-    pixels.par.foreach {
-      case (x, y) =>
-        canvas.writePixel(x, y, w.colorAt(rayForPixel(x, y)))
-    }
+    pixels.foreach { case (x, y, color) => canvas.writePixel(x, y, color) }
+
     canvas
   }
 }
