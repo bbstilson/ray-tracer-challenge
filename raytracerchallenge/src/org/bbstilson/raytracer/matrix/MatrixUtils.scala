@@ -18,8 +18,7 @@ object MatrixUtils {
       .map {
         case (col, c) =>
           col.map {
-            case (_, r) =>
-              if (r == c) 1d else 0d
+            case (_, r) => if (r == c) 1d else 0d
           }
       }
   }
