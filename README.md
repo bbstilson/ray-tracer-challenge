@@ -11,8 +11,7 @@ Once everything is installed, you should be able to run the following:
 ## Running the Main files
 
 ```
-> sbt
-> runMain org.bbstilson.raytracer.Chapter1
+> mill.runMain org.bbstilson.raytracer.chapters.Chapter1
 ```
 
 ## Running the tests
@@ -20,15 +19,13 @@ Once everything is installed, you should be able to run the following:
 From the project root:
 
 ```
-> sbt
-> test
+> mill raytracerchallenge.test
 ```
 
 ### Running a specific suite
 
 ```
-> sbt
-> test:testOnly *SomeSpec
+TBD. Mill [has a way](http://www.lihaoyi.com/post/MillBetterScalaBuilds.html) but I haven't figured it out yet.
 ```
 
 ### Running a specific test
@@ -42,8 +39,7 @@ Where a test looks like:
 ```
 
 ```
-> sbt
-> test:testOnly *SomeSpec -- -z "do a thing"
+TBD. Mill [has a way](http://www.lihaoyi.com/post/MillBetterScalaBuilds.html) but I haven't figured it out yet.
 ```
 
 ## Putting it together
