@@ -15,7 +15,7 @@ class WorldSpec extends UnitSpec with WorldUtils {
   }
 
   "intersect" should "return a list of intersections" in {
-    val r = Ray(Point(0, 0, -5), SceneVector(0, 0, 1))
+    val r = Ray(Point(0, 0, -5), Vector3(0, 0, 1))
     val xs = w.intersect(r)
 
     xs.size shouldBe 4
@@ -26,7 +26,7 @@ class WorldSpec extends UnitSpec with WorldUtils {
   }
 
   "shadeHit" should "shade an intersection" in {
-    val r = Ray(Point(0, 0, -5), SceneVector(0, 0, 1))
+    val r = Ray(Point(0, 0, -5), Vector3(0, 0, 1))
     val shape = w.objects.head
     val i = Intersection(4, shape)
     val c = i.prepareComputations(r)
@@ -35,7 +35,7 @@ class WorldSpec extends UnitSpec with WorldUtils {
 
   it should "shade an intersection from the inside" in {
     val w = World(List(s1, s2), Some(PointLight(Point(0, 0.25, 0), Color(1, 1, 1))))
-    val r = Ray(Point(0, 0, 0), SceneVector(0, 0, 1))
+    val r = Ray(Point(0, 0, 0), Vector3(0, 0, 1))
     val shape = w.objects.drop(1).head
     val i = Intersection(0.5, shape)
     val c = i.prepareComputations(r)
@@ -43,12 +43,12 @@ class WorldSpec extends UnitSpec with WorldUtils {
   }
 
   "colorAt" should "color when a ray misses" in {
-    val r = Ray(Point(0, 0, -5), SceneVector(0, 1, 0))
+    val r = Ray(Point(0, 0, -5), Vector3(0, 1, 0))
     w.colorAt(r) shouldBe Color.BLACK
   }
 
   it should "color when a ray hits" in {
-    val r = Ray(Point(0, 0, -5), SceneVector(0, 0, 1))
+    val r = Ray(Point(0, 0, -5), Vector3(0, 0, 1))
     w.colorAt(r) shouldBe Color(0.38066, 0.47583, 0.2855)
   }
 
@@ -60,7 +60,7 @@ class WorldSpec extends UnitSpec with WorldUtils {
       material = s2.material.copy(ambient = 1d)
     )
     val w = World(List(outer, inner), Some(light))
-    val r = Ray(Point(0, 0, 0.75), SceneVector(0, 0, -1))
+    val r = Ray(Point(0, 0, 0.75), Vector3(0, 0, -1))
 
     w.colorAt(r) shouldBe inner.material.color
   }

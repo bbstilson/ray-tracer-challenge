@@ -32,9 +32,9 @@ class MatrixDouble(vec: Matrix) {
     Point(x, y, z)
   }
 
-  def *(sv: SceneVector): SceneVector = {
-    val Vector(x, y, z, _) = this * Vector(sv.x, sv.y, sv.z, 1)
-    SceneVector(x, y, z)
+  def *(ov: Vector3): Vector3 = {
+    val Vector(x, y, z, _) = this * Vector(ov.x, ov.y, ov.z, 1)
+    Vector3(x, y, z)
   }
 
   def +(other: MatrixDouble): MatrixDouble = {

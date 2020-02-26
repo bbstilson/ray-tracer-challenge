@@ -13,15 +13,15 @@ class ScaleSpec extends UnitSpec {
 
   it should "scale a scene vector" in {
     val transform = Scale(2, 3, 4)
-    val v = SceneVector(-4, 6, 8)
-    transform * v should be(SceneVector(-8, 18, 32))
+    val v = Vector3(-4, 6, 8)
+    transform * v should be(Vector3(-8, 18, 32))
   }
 
   it should "revert via its inverse" in {
     val transform = Scale(2, 3, 4)
     val inv = transform.inverse
-    val v = SceneVector(-4, 6, 8)
-    inv * v should be(SceneVector(-2, 2, 2))
+    val v = Vector3(-4, 6, 8)
+    inv * v should be(Vector3(-2, 2, 2))
   }
 
   it should "reflect" in {

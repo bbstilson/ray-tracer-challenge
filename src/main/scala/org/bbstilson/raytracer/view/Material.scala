@@ -15,8 +15,8 @@ case class Material(
   def light(
     light: PointLight,
     point: Point,
-    eye: SceneVector,
-    normal: SceneVector
+    eye: Vector3,
+    normal: Vector3
   ): Color = {
     // Combine the surface color with the light's color/intensity.
     val effectiveColor = color * light.intensity
@@ -40,7 +40,7 @@ case class Material(
         // reflectDotEye represents the cosine of the angle between the reflection
         // vector and the eye vector. A negative number means the light reflects
         // away from the eye.
-        val reflectV = SceneVector.reflect(-lightv, normal)
+        val reflectV = Vector3.reflect(-lightv, normal)
         val specularComputed = reflectV.dot(eye) match {
           case rDE if rDE <= 0 => Color.BLACK
           case reflectDotEye => {

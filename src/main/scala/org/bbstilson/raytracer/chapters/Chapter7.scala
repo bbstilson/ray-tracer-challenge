@@ -42,7 +42,7 @@ object Chapter7 {
       List(floor, leftWall, rightWall, leftBall, middleBall, rightBall),
       Some(light)
     )
-    val view = ViewTransform(Point(0, 1.5, -5), Point(0, 1, 0), SceneVector(0, 1, 0))
+    val view = ViewTransform(Point(0, 1.5, -5), Point(0, 1, 0), Vector3(0, 1, 0))
     val camera = Camera(100, 50, Math.PI / 3, view)
 
     camera.render(world).save

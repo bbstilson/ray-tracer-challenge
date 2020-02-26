@@ -20,7 +20,7 @@ class TranslationSpec extends UnitSpec {
 
   it should "not affect scene vectors" in {
     val transform = Translation(5, -3, 2)
-    val v = SceneVector(-3, 4, 5)
+    val v = Vector3(-3, 4, 5)
     transform * v should be(v)
   }
 }

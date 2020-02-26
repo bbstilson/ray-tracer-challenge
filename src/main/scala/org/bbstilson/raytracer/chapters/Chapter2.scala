@@ -7,11 +7,11 @@ object Chapter2 {
 
   def main(args: Array[String]): Unit = {
     val start = Point(0, 1, 0)
-    val velocity = SceneVector(1, 1.8, 0).normalize * 11.25
+    val velocity = Vector3(1, 1.8, 0).normalize * 11.25
     var p = Projectile(start, velocity)
 
-    val gravity = SceneVector(0, -0.1, 0)
-    val wind = SceneVector(-0.01, 0, 0)
+    val gravity = Vector3(0, -0.1, 0)
+    val wind = Vector3(-0.01, 0, 0)
     val e = Environment(gravity, wind)
 
     val c = new Canvas(900, 550)

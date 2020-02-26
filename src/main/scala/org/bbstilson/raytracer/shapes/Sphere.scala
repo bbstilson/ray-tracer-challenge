@@ -35,7 +35,7 @@ case class Sphere(
     }
   }
 
-  def normalAt(p: Point): SceneVector = {
+  def normalAt(p: Point): Vector3 = {
     val objectPoint = transform.inverse * p
     val objectNormal = objectPoint - Point(0, 0, 0)
     val worldNormal = transform.inverse.transpose * objectNormal

@@ -6,7 +6,7 @@ import MatrixUtils._
 import MatrixDouble._
 
 final case class Translation(m: Matrix) extends MatrixDouble(m) {
-  override def *(sv: SceneVector): SceneVector = sv
+  override def *(v: Vector3): Vector3 = v
 }
 
 object Translation {

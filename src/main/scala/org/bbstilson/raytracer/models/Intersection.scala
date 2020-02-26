@@ -21,8 +21,8 @@ final case class IntersectionComputations(
   t: Double,
   o: Interactable,
   point: Point,
-  eyeV: SceneVector,
-  normalV: SceneVector,
+  eyeV: Vector3,
+  normalV: Vector3,
   inside: Boolean
 )
 
