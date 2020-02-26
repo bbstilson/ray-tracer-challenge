@@ -37,36 +37,36 @@ Projectile(Point(10.660815280171308,-0.579184719828692,0.0),Vector3(0.5371067811
 
 ## Chapter 2
 
-![A visual projectile falling.](./../../../../../../img/chapter2.jpg)
+![A visual projectile falling.](./../../../../../img/chapter2.jpg)
 
 ## Chapter 4
 
-![A clock.](./../../../../../../img/chapter4.jpg)
+![A clock.](./../../../../../img/chapter4.jpg)
 
 ## Chapter 5
 
 ### Normal sphere.
 
-![Red sphere](./../../../../../../img/chapter5.jpg)
+![Red sphere](./../../../../../img/chapter5.jpg)
 
 ### Sphere: Y Axis shrink.
 
-![Red sphere, y axis shrink](./../../../../../../img/chapter5_y_shrink.jpg)
+![Red sphere, y axis shrink](./../../../../../img/chapter5_y_shrink.jpg)
 
 ### Sphere: X Axis shrink.
 
-![Red sphere, x axis shrink](./../../../../../../img/chapter5_x_shrink.jpg)
+![Red sphere, x axis shrink](./../../../../../img/chapter5_x_shrink.jpg)
 
 ### Sphere: axis shrink and rotation.
 
-![Red sphere, shrink and rotate](./../../../../../../img/chapter5_shrink_rotate.jpg)
+![Red sphere, shrink and rotate](./../../../../../img/chapter5_shrink_rotate.jpg)
 
 ### Sphere: shrink, rotation, and skew.
 
-![Red sphere, shrink, rotate, and skew](./../../../../../../img/chapter5_shrink_rotate_skew.jpg)
+![Red sphere, shrink, rotate, and skew](./../../../../../img/chapter5_shrink_rotate_skew.jpg)
 
 ## Chapter 6
 
-![3d Sphere!](./../../../../../../img/chapter6.jpg)
-![3d Sphere!](./../../../../../../img/chapter6-1.jpg)
-![3d Sphere!](./../../../../../../img/chapter6-2.jpg)
+![3d Sphere!](./../../../../../img/chapter6.jpg)
+![3d Sphere!](./../../../../../img/chapter6-1.jpg)
+![3d Sphere!](./../../../../../img/chapter6-2.jpg)
